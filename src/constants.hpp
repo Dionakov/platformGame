@@ -3,4 +3,6 @@
 
 #define PPM 30.f
 
+#define CLEARCOLOR sf::Color::White
+
 #endif

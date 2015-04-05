@@ -1,13 +1,13 @@
 #ifndef BOXBOUNDARY_HPP
 #define BOXBOUNDARY_HPP
 
-#include "../PhysicalEntity.hpp"
+#include "../WorldEntity.hpp"
 #include "../../constants.hpp"
 
-class BoxBoundary : public PhysicalEntity {
+class BoxBoundary : public WorldEntity {
 
 	public:
-	BoxBoundary(b2World const* world, b2Body* body) : PhysicalEntity(world, body) {
+	BoxBoundary(sf::RenderWindow const& window,b2World const* world, b2Body* body) : WorldEntity(window, world, body) {
 
 		this->body->SetUserData((void*)"BoxBoundary");
 	}

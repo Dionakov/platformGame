@@ -5,8 +5,11 @@
  */
 
 /* TODO
+ * fix boxboundary bug
+ * think about graphical entities having multiple drawables
  * finish code clean up
  * think about a way to integrate levels
+ * think about gamestates
  */
 
 #include <iostream>
@@ -37,22 +40,20 @@ std::string numToStr(TNum num) {
  * 
  * TODO write detailled description
  */
-typedef std::vector<AbstractEntity*> EntityList;
+typedef std::vector<PhysicalEntity*> PhysicalEntityList;
+typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 
 int main() {
-
-	void* str = "Hello !";
-	if(std::string(static_cast<const char*>(str))==std::string("Hello !"))
-		std::cout << "Hello !" << std::endl;
-	else
-		std::cout << ":(" << std::endl;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar);
 	window.setFramerateLimit(120);
 	window.setVerticalSyncEnabled(false);
 
-	EntityList graphicalEntities;
-	EntityList physicalEntities;
+	sf::View view(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
+	window.setView(view);
+
+	GraphicalEntityList graphicalEntities;
+	PhysicalEntityList physicalEntities;
 
 	sf::Font font;
 	sf::Text fpsText;
@@ -72,8 +73,9 @@ int main() {
 	graphicalEntities.push_back(sq);
 	physicalEntities.push_back(sq);
 
-	BoxBoundary* wb = new BoxBoundary(&world, world.CreateBody(&BoxBoundary::getBodyDef()));
+	BoxBoundary* wb = new BoxBoundary(window, &world, world.CreateBody(&BoxBoundary::getBodyDef()));
 	wb->set(b2Vec2(0,0), b2Vec2(800/PPM,600/PPM));
+	graphicalEntities.push_back(wb);
 	physicalEntities.push_back(wb);
 
 	BasicPlatform* platform2 = new BasicPlatform(window, &world, world.CreateBody(&BasicPlatform::getBodyDef()), b2Vec2(500.f/PPM, 200.f/PPM));
@@ -107,14 +109,24 @@ int main() {
 
 		fpsText.setString(sf::String(numToStr(floorf(framerate+0.5f))+" fps"));
 
-		for(EntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
+		view.setCenter(sq->getDrawable()->getPosition());
+		window.setView(view);
+
+		std::sort(graphicalEntities.begin(), graphicalEntities.end());
+
+		for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
 			(*it)->tick();
 		
 		world.Step(1.f/framerate, 6, 2);
-		window.clear(sf::Color::White);
-		for(EntityList::iterator it = graphicalEntities.begin(); it != graphicalEntities.end(); it++)
-			window.draw(*(dynamic_cast<GraphicalEntity*>(*it)->getDrawable()));
+		window.clear(CLEARCOLOR);
+		for(GraphicalEntityList::iterator it = graphicalEntities.begin(); it != graphicalEntities.end(); it++)
+			window.draw(*(*it)->getDrawable());
+
+		// hud
+		window.setView(window.getDefaultView());
+
 		window.draw(fpsText);
+
 		window.display();
 	}
 	return EXIT_SUCCESS;

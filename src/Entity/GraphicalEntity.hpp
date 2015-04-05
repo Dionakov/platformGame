@@ -23,7 +23,8 @@ class GraphicalEntity : public virtual AbstractEntity {
 	GraphicalEntity(sf::RenderWindow const& window) : window(window) {}
 	virtual ~GraphicalEntity() {}
 	GraphicalElement const* getDrawable(void) const { return this->drawable; }
-	bool operator>(GraphicalEntity const& other) const { return this->layer < other.layer; } // TODO test this
+	bool operator<(GraphicalEntity const& other) const { return this->layer < other.layer; } // TODO test this
+	Layer getLayer(void) const { return this->layer; }
 
 	public:
 	Layer layer;

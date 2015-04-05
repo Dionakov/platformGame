@@ -1,4 +1,5 @@
 #include "BoxBoundary.hpp"
+#include <cmath>
 
 b2BodyDef BoxBoundary::getBodyDef(void) {
 
@@ -27,4 +28,13 @@ void BoxBoundary::set(b2Vec2 pos, b2Vec2 size) {
 
 	body->CreateFixture(&fixtureDef);
 	body->SetTransform(pos, 0);
+
+	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(size.x*PPM*(31.f/30.f), size.y*PPM*(31.f/30.f)));
+	s->setFillColor(CLEARCOLOR);
+	s->setOutlineThickness((size.x < size.y ? size.x : size.y)*PPM/30.f);
+	s->setOutlineColor(sf::Color(40, 40, 40));
+
+	this->drawable = reinterpret_cast<GraphicalElement*>(s);
+
+	this->layer = BACKGROUND;
 }
