@@ -1,13 +1,13 @@
-﻿Build started 05/04/2015 17:55:02.
+﻿Build started 06/04/2015 20:04:18.
      1>Project "F:\Programmation\platformGame\platformGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\BasicPlatform.cpp src\Entity\Entities\BoxBoundary.cpp src\Entity\Entities\Square.cpp src\Entity\EntityContactListener.cpp src\Entity\WorldEntity.cpp src\main.cpp
          main.cpp
+         WorldEntity.cpp
+         Square.cpp
          Generating Code...
          Compiling...
-         WorldEntity.cpp
          EntityContactListener.cpp
-         Square.cpp
          BoxBoundary.cpp
          BasicPlatform.cpp
          Generating Code...
@@ -23,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.87
+Time Elapsed 00:00:05.93

@@ -46,7 +46,7 @@ typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar);
-	window.setFramerateLimit(120);
+	window.setFramerateLimit(36);
 	window.setVerticalSyncEnabled(false);
 
 	sf::View view(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
@@ -74,7 +74,7 @@ int main() {
 	physicalEntities.push_back(sq);
 
 	BoxBoundary* wb = new BoxBoundary(window, &world, world.CreateBody(&BoxBoundary::getBodyDef()));
-	wb->set(b2Vec2(0,0), b2Vec2(800/PPM,600/PPM));
+	wb->set(b2Vec2(0,0), b2Vec2(1300/PPM,1000/PPM));
 	graphicalEntities.push_back(wb);
 	physicalEntities.push_back(wb);
 
@@ -100,7 +100,8 @@ int main() {
 
 			else if(e.type == sf::Event::MouseButtonPressed) {
 
-				b2Vec2 mousePos = b2Vec2(e.mouseButton.x/PPM, e.mouseButton.y/PPM);
+				sf::Vector2f sfmousePos = window.mapPixelToCoords(sf::Vector2i(e.mouseButton.x, e.mouseButton.y), view);
+				b2Vec2 mousePos = b2Vec2(sfmousePos.x/PPM, sfmousePos.y/PPM);
 				BasicPlatform* platform = new BasicPlatform(window, &world, world.CreateBody(&BasicPlatform::getBodyDef()), mousePos);
 				graphicalEntities.push_back(platform);
 				physicalEntities.push_back(platform);
