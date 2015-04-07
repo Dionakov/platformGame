@@ -1,26 +1,62 @@
-﻿Build started 06/04/2015 20:04:18.
-     1>Project "F:\Programmation\platformGame\platformGame.vcxproj" on node 2 (Build target(s)).
+﻿La génération a démarré 07/04/2015 10:03:59.
+     1>Projet "C:\Programmation\platformGame\platformGame.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
-         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\BasicPlatform.cpp src\Entity\Entities\BoxBoundary.cpp src\Entity\Entities\Square.cpp src\Entity\EntityContactListener.cpp src\Entity\WorldEntity.cpp src\main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.cpp
          main.cpp
-         WorldEntity.cpp
-         Square.cpp
-         Generating Code...
-         Compiling...
-         EntityContactListener.cpp
-         BoxBoundary.cpp
-         BasicPlatform.cpp
-         Generating Code...
        Link:
-         F:\Logiciels\VS 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Programmation\platformGame\Debug\platformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib/SFML/lib /LIBPATH:lib/Box2D/Build/vs2012 "sfml-system-d.lib" "sfml-window-d.lib" "sfml-graphics-d.lib" Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Programmation\platformGame\Debug\platformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Programmation\platformGame\Debug\platformGame.lib" /MACHINE:X86 Debug\BasicPlatform.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Programmation\platformGame\Debug\platformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib/SFML/lib /LIBPATH:lib/Box2D/Build/vs2012 "sfml-system-d.lib" "sfml-window-d.lib" "sfml-graphics-d.lib" Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Programmation\platformGame\Debug\platformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Programmation\platformGame\Debug\platformGame.lib" /MACHINE:X86 Debug\BasicPlatform.obj
          Debug\BoxBoundary.obj
          Debug\Square.obj
          Debug\EntityContactListener.obj
          Debug\WorldEntity.obj
          Debug\main.obj
-         platformGame.vcxproj -> F:\Programmation\platformGame\Debug\platformGame.exe
-     1>Done Building Project "F:\Programmation\platformGame\platformGame.vcxproj" (Build target(s)).
+     1>Box2D.lib(b2DistanceJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2FrictionJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2GearJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Joint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2MotorJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2MouseJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2PrismaticJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2PulleyJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2RevoluteJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2RopeJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2WeldJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2WheelJoint.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2CircleContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Contact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2ContactSolver.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2PolygonAndCircleContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2EdgeAndCircleContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2EdgeAndPolygonContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2ChainAndCircleContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2ChainAndPolygonContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2PolygonContact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Body.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2ContactManager.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Fixture.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Island.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2World.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2WorldCallbacks.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2BlockAllocator.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Draw.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Math.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Settings.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2StackAllocator.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Timer.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2EdgeShape.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2ChainShape.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2PolygonShape.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2BroadPhase.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2CollideCircle.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2CollideEdge.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2CollidePolygon.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Collision.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2Distance.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2DynamicTree.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+     1>Box2D.lib(b2TimeOfImpact.obj) : warning LNK4204: 'C:\Programmation\platformGame\Debug\vc110.pdb' n'a pas d'informations de dÚbogage pour rÚfÚrencer le moduleá; Údition de liens des objets comme s'il n'y avait aucune information de dÚbogage
+         platformGame.vcxproj -> C:\Programmation\platformGame\Debug\platformGame.exe
+     1>Génération du projet "C:\Programmation\platformGame\platformGame.vcxproj" terminée (Build cible(s)).
 
-Build succeeded.
+La génération a réussi.
 
-Time Elapsed 00:00:05.93
+Temps écoulé 00:00:04.75

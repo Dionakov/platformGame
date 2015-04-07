@@ -19,7 +19,7 @@ class Square : public WorldEntity {
 
 	virtual void tick(void);
 
-	void jump(void);
+	void jump(float framerate);
 
 	bool contactLeft;
 	bool contactRight;

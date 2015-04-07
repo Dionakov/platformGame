@@ -46,7 +46,7 @@ typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar);
-	window.setFramerateLimit(36);
+	window.setFramerateLimit(20);
 	window.setVerticalSyncEnabled(false);
 
 	sf::View view(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
@@ -96,7 +96,7 @@ int main() {
 				window.close();
 
 			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Space)
-				sq->jump();
+				sq->jump(framerate);
 
 			else if(e.type == sf::Event::MouseButtonPressed) {
 
@@ -116,9 +116,9 @@ int main() {
 		std::sort(graphicalEntities.begin(), graphicalEntities.end());
 
 		for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
-			(*it)->tick();
+			(*it)->tick(framerate);
 		
-		world.Step(1.f/framerate, 6, 2);
+		world.Step(1.f/60.f, 6, 2);
 		window.clear(CLEARCOLOR);
 		for(GraphicalEntityList::iterator it = graphicalEntities.begin(); it != graphicalEntities.end(); it++)
 			window.draw(*(*it)->getDrawable());
