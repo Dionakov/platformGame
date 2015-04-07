@@ -69,12 +69,12 @@ void Square::tick(void) {
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
 			!sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
 			!contactLeft)
-			body->SetLinearVelocity(b2Vec2(-500.f/PPM, body->GetLinearVelocity().y));
+			body->SetLinearVelocity(b2Vec2(-600.f/PPM, body->GetLinearVelocity().y));
 			
 		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
 				!sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
 				!contactRight)
-			body->SetLinearVelocity(b2Vec2(500.f/PPM, body->GetLinearVelocity().y));
+			body->SetLinearVelocity(b2Vec2(600.f/PPM, body->GetLinearVelocity().y));
 		else
 			body->SetLinearVelocity(b2Vec2(0.f, body->GetLinearVelocity().y));
 	}

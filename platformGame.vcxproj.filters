@@ -28,6 +28,9 @@
     <ClInclude Include="src\Entity\Entities\Square.hpp">
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="src\Entity\Entities\TrailBullet.hpp">
+      <Filter>src\Entity\Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entities\TrailBullet.cpp">
+      <Filter>src\Entity\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

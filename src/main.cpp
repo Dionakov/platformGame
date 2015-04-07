@@ -22,6 +22,7 @@
 #include "Entity/Entities/Square.hpp"
 #include "Entity/Entities/BasicPlatform.hpp"
 #include "Entity/Entities/BoxBoundary.hpp"
+#include "Entity/Entities/TrailBullet.hpp"
 #include "constants.hpp"
 
 template<typename TNum>
@@ -46,8 +47,7 @@ typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar);
-	window.setFramerateLimit(20);
-	window.setVerticalSyncEnabled(false);
+	window.setVerticalSyncEnabled(true);
 
 	sf::View view(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
 	window.setView(view);
@@ -96,7 +96,29 @@ int main() {
 				window.close();
 
 			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Space)
-				sq->jump(framerate);
+				sq->jump();
+
+			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Left) {
+
+				TrailBullet* b = new TrailBullet(window, 
+												 &world, 
+												 world.CreateBody(&TrailBullet::getBodyDef()), 
+												 b2Vec2(sq->getBody()->GetPosition().x-(50.f/PPM), sq->getBody()->GetPosition().y),
+												 false);
+				graphicalEntities.push_back(b);
+				physicalEntities.push_back(b);
+			}
+
+			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Right) {
+
+				TrailBullet* b = new TrailBullet(window, 
+												 &world, 
+												 world.CreateBody(&TrailBullet::getBodyDef()), 
+												 b2Vec2(sq->getBody()->GetPosition().x+(50.f/PPM), sq->getBody()->GetPosition().y),
+												 true);
+				graphicalEntities.push_back(b);
+				physicalEntities.push_back(b);
+			}
 
 			else if(e.type == sf::Event::MouseButtonPressed) {
 
@@ -116,9 +138,9 @@ int main() {
 		std::sort(graphicalEntities.begin(), graphicalEntities.end());
 
 		for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
-			(*it)->tick(framerate);
+			(*it)->tick();
 		
-		world.Step(1.f/60.f, 6, 2);
+		world.Step(1.f/(framerate <= 30.f ? 30.f : (framerate>=300.f ? 300.f : framerate)), 6, 2);
 		window.clear(CLEARCOLOR);
 		for(GraphicalEntityList::iterator it = graphicalEntities.begin(); it != graphicalEntities.end(); it++)
 			window.draw(*(*it)->getDrawable());

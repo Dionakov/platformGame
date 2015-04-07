@@ -16,6 +16,7 @@
     <ClInclude Include="src\Entity\Entities\BasicPlatform.hpp" />
     <ClInclude Include="src\Entity\Entities\BoxBoundary.hpp" />
     <ClInclude Include="src\Entity\Entities\Square.hpp" />
+    <ClInclude Include="src\Entity\Entities\TrailBullet.hpp" />
     <ClInclude Include="src\Entity\EntityContactListener.hpp" />
     <ClInclude Include="src\Entity\GraphicalEntity.hpp" />
     <ClInclude Include="src\Entity\PhysicalEntity.hpp" />
@@ -25,6 +26,7 @@
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp" />
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp" />
     <ClCompile Include="src\Entity\Entities\Square.cpp" />
+    <ClCompile Include="src\Entity\Entities\TrailBullet.cpp" />
     <ClCompile Include="src\Entity\EntityContactListener.cpp" />
     <ClCompile Include="src\Entity\WorldEntity.cpp" />
     <ClCompile Include="src\main.cpp" />
