@@ -10,6 +10,8 @@
  * finish code clean up
  * think about a way to integrate levels
  * think about gamestates
+
+ * more generally, restructurate the code quickly before it goes unsustainable.
  */
 
 #include <iostream>
