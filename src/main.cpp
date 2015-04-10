@@ -5,7 +5,6 @@
  */
 
 /* TODO
- * fix boxboundary bug
  * think about graphical entities having multiple drawables
  * finish code clean up
  * think about a way to integrate levels
@@ -48,7 +47,7 @@ typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 
 int main() {
 
-	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar);
+	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 	window.setVerticalSyncEnabled(true);
 
 	sf::View view(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
@@ -76,7 +75,7 @@ int main() {
 	physicalEntities.push_back(sq);
 
 	BoxBoundary* wb = new BoxBoundary(window, &world, world.CreateBody(&BoxBoundary::getBodyDef()));
-	wb->set(b2Vec2(0,0), b2Vec2(1300/PPM,1000/PPM));
+	wb->set(b2Vec2(0,0), b2Vec2(2000/PPM,1000/PPM));
 	graphicalEntities.push_back(wb);
 	physicalEntities.push_back(wb);
 
@@ -103,10 +102,10 @@ int main() {
 			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Left) {
 
 				TrailBullet* b = new TrailBullet(window, 
-												 &world, 
-												 world.CreateBody(&TrailBullet::getBodyDef()), 
-												 b2Vec2(sq->getBody()->GetPosition().x-(50.f/PPM), sq->getBody()->GetPosition().y),
-												 false);
+					&world, 
+					world.CreateBody(&TrailBullet::getBodyDef()), 
+					b2Vec2(sq->getBody()->GetPosition().x-(50.f/PPM), sq->getBody()->GetPosition().y),
+					false);
 				graphicalEntities.push_back(b);
 				physicalEntities.push_back(b);
 			}
@@ -114,10 +113,10 @@ int main() {
 			else if(e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Right) {
 
 				TrailBullet* b = new TrailBullet(window, 
-												 &world, 
-												 world.CreateBody(&TrailBullet::getBodyDef()), 
-												 b2Vec2(sq->getBody()->GetPosition().x+(50.f/PPM), sq->getBody()->GetPosition().y),
-												 true);
+					&world, 
+					world.CreateBody(&TrailBullet::getBodyDef()), 
+					b2Vec2(sq->getBody()->GetPosition().x+(50.f/PPM), sq->getBody()->GetPosition().y),
+					true);
 				graphicalEntities.push_back(b);
 				physicalEntities.push_back(b);
 			}

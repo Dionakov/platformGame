@@ -35,3 +35,8 @@ b2BodyDef TrailBullet::getBodyDef(void) {
 	bodyDef.type = b2_staticBody;
 	return bodyDef;
 }
+
+void TrailBullet::onBeginContact(b2Contact* contact) {
+
+
+}

@@ -24,7 +24,7 @@ BasicPlatform::BasicPlatform(sf::RenderWindow const& window,
 
 	this->drawable = reinterpret_cast<GraphicalElement*>(s);
 
-	this->body->SetUserData((void*)"BasicPlatform");
+	this->body->SetUserData((void*)this);
 }
 
 b2BodyDef BasicPlatform::getBodyDef(void) {

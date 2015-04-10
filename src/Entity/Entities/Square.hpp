@@ -12,19 +12,18 @@ class Square : public WorldEntity {
 		   b2World const* world,
 		   b2Body* body);
 
-	void onFootSensorCollision(bool beginContact)
-	{ this->numFootContacts += beginContact ? 1 : -1; }
-
 	static b2BodyDef getBodyDef(void);
 
 	virtual void tick(void);
+	virtual void onBeginContact(b2Contact* contact);
+	virtual void onEndContact(b2Contact* contact);
 
 	void jump(void);
-
+	
+	protected:
 	bool contactLeft;
 	bool contactRight;
 
-	protected:
 	int numFootContacts;
 };
 

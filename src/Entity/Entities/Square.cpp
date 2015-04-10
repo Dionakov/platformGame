@@ -106,3 +106,67 @@ void Square::jump(void) {
 	else if(contactRight)
 		body->ApplyLinearImpulse(b2Vec2(-body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
 }
+
+void Square::onBeginContact(b2Contact* contact) {
+
+	// TODO see if this can be done in a cleaner way
+
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
+	
+	if(fixtureA->GetUserData() != 0) {
+
+		std::string userData = static_cast<const char*>(fixtureA->GetUserData());
+
+		if(userData == "FootSensor")
+			numFootContacts++;
+		else if(userData == "LeftSquareSide")
+			contactLeft = true;
+		else if(userData == "RightSquareSide")
+			contactRight = true;
+	}
+
+	else if(fixtureB->GetUserData() != 0) {
+
+		std::string userData = static_cast<const char*>(fixtureB->GetUserData());
+
+		if(userData == "FootSensor")
+			numFootContacts++;
+		else if(userData == "LeftSquareSide")
+			contactLeft = true;
+		else if(userData == "RightSquareSide")
+			contactRight = true;
+	}
+}
+
+void Square::onEndContact(b2Contact* contact) {
+
+	// TODO see if this can be done in a cleaner way
+
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
+	
+	if(fixtureA->GetUserData() != 0) {
+
+		std::string userData = static_cast<const char*>(fixtureA->GetUserData());
+
+		if(userData == "FootSensor")
+			numFootContacts--;
+		else if(userData == "LeftSquareSide")
+			contactLeft = false;
+		else if(userData == "RightSquareSide")
+			contactRight = false;
+	}
+
+	else if(fixtureB->GetUserData() != 0) {
+
+		std::string userData = static_cast<const char*>(fixtureB->GetUserData());
+
+		if(userData == "FootSensor")
+			numFootContacts--;
+		else if(userData == "LeftSquareSide")
+			contactLeft = false;
+		else if(userData == "RightSquareSide")
+			contactRight = false;
+	}
+}

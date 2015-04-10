@@ -15,6 +15,7 @@ class TrailBullet : public WorldEntity {
 	static b2BodyDef getBodyDef(void);
 
 	virtual void tick(void);
+	virtual void onBeginContact(b2Contact* contact);
 	//isOutOfBounds ?
 
 	protected:

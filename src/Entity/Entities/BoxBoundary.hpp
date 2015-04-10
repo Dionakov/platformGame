@@ -9,7 +9,7 @@ class BoxBoundary : public WorldEntity {
 	public:
 	BoxBoundary(sf::RenderWindow const& window,b2World const* world, b2Body* body) : WorldEntity(window, world, body) {
 
-		this->body->SetUserData((void*)"BoxBoundary");
+		this->body->SetUserData((void*)this);
 	}
 
 	static b2BodyDef getBodyDef(void);
