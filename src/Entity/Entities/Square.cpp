@@ -2,14 +2,8 @@
 #include <iostream>
 #include "../../constants.hpp"
 
-Square::Square(sf::RenderWindow const& window, 
-			   b2World const* world, 
-			   b2Body* body)
-			   : WorldEntity(window, world, body),
-			   numFootContacts(0),
-			   contactLeft(false),
-			   contactRight(false)
-{
+Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), numFootContacts(0), contactLeft(false), contactRight(false) {
+
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
 	fixtureDef.friction = 0.3f;

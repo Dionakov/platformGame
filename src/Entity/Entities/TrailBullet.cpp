@@ -1,13 +1,8 @@
 #include "TrailBullet.hpp"
 #include "../../constants.hpp"
 
-TrailBullet::TrailBullet(sf::RenderWindow const& window,
-						 b2World const* world,
-						 b2Body* body,
-						 b2Vec2 pos,
-						 bool directionIsRight)
-						 : WorldEntity(window, world, body),
-						   directionIsRight(directionIsRight)
+TrailBullet::TrailBullet(b2World const* world, b2Body* body, b2Vec2 pos, bool directionIsRight) 
+	: WorldEntity(world, body), directionIsRight(directionIsRight), startX(pos.x)
 {
 	b2FixtureDef fixtureDef;
 	b2PolygonShape polygonShape;
@@ -25,6 +20,9 @@ TrailBullet::TrailBullet(sf::RenderWindow const& window,
 
 void TrailBullet::tick(void) { 
 	
+	if(abs(body->GetPosition().x - startX)>=300.f/PPM)
+		dead = true;
+
 	body->SetTransform(b2Vec2(body->GetPosition().x+(directionIsRight ? 1.f : -1.f), body->GetPosition().y), 0);
 	this->updateGraphics(); 
 }

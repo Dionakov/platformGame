@@ -6,10 +6,7 @@
 class BasicPlatform : public WorldEntity {
 
 	public:
-	BasicPlatform(sf::RenderWindow const&  window, 
-			      b2World const* world, 
-				  b2Body* body, 
-				  b2Vec2 pos);
+	BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos);
 
 	static b2BodyDef getBodyDef(void);
 

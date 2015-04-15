@@ -11,7 +11,7 @@
 class PhysicalEntity : public virtual AbstractEntity {
 
 	public:
-	PhysicalEntity(b2World const* world, b2Body* body) : world(world), body(body) {}
+	PhysicalEntity(b2World const* world, b2Body* body) : AbstractEntity(), world(world), body(body) {}
 	b2Body const* getBody(void) { return this->body; }
 	virtual void onBeginContact(b2Contact* contact) {}
 	virtual void onEndContact(b2Contact* contact) {}

@@ -6,11 +6,7 @@
 class TrailBullet : public WorldEntity {
 
 	public:
-	TrailBullet(sf::RenderWindow const& window,
-		        b2World const* world,
-				b2Body* body,
-				b2Vec2 pos,
-				bool directionIsRight);
+	TrailBullet(b2World const* world, b2Body* body, b2Vec2 pos, bool directionIsRight);
 
 	static b2BodyDef getBodyDef(void);
 
@@ -20,6 +16,7 @@ class TrailBullet : public WorldEntity {
 
 	protected:
 	bool directionIsRight;
+	float startX;
 };
 
 #endif

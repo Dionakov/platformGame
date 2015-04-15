@@ -8,8 +8,13 @@
 class AbstractEntity {
 
 	public:
+	AbstractEntity(void) : dead(false) {}
 	virtual void tick(void) = 0;
-	virtual ~AbstractEntity() {};
+	virtual ~AbstractEntity() {}
+	bool isDead(void) const { return dead; }
+
+	protected:
+	bool dead;
 };
 
 #endif

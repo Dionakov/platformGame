@@ -8,10 +8,10 @@
  * \class WorldEntity WorldEntity.hpp
  * \brief represents a game element that has a physical and visual existence.
  */
-class WorldEntity : public GraphicalEntity, public PhysicalEntity {
+class WorldEntity : public virtual GraphicalEntity, public PhysicalEntity {
 
 	public:
-	WorldEntity(sf::RenderWindow const& window, b2World const* world, b2Body* body) : PhysicalEntity(world, body), GraphicalEntity(window) {}
+	WorldEntity(b2World const* world, b2Body* body) : PhysicalEntity(world, body), GraphicalEntity() {}
 	virtual void tick(void);
 
 	protected:

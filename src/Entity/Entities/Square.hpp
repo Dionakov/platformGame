@@ -8,9 +8,7 @@
 class Square : public WorldEntity {
 
 	public:
-	Square(sf::RenderWindow const& window,
-		   b2World const* world,
-		   b2Body* body);
+	Square(b2World const* world, b2Body* body);
 
 	static b2BodyDef getBodyDef(void);
 

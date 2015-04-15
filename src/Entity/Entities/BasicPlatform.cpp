@@ -1,12 +1,8 @@
 #include "BasicPlatform.hpp"
 #include "../../constants.hpp"
 
-BasicPlatform::BasicPlatform(sf::RenderWindow const& window, 
-							 b2World const* world, 
-							 b2Body* body, 
-							 b2Vec2 pos)
-							 : WorldEntity(window, world, body)
-{
+BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos) : WorldEntity(world, body) {
+
 	b2FixtureDef fixtureDef;
 	fixtureDef.friction = 0.3f;
 		

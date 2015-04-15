@@ -20,7 +20,7 @@ typedef enum Layer {
 class GraphicalEntity : public virtual AbstractEntity {
 
 	public:
-	GraphicalEntity(sf::RenderWindow const& window) : window(window) {}
+	GraphicalEntity(void) : AbstractEntity() {}
 	virtual ~GraphicalEntity() {}
 	GraphicalElement const* getDrawable(void) const { return this->drawable; }
 	bool operator<(GraphicalEntity const& other) const { return this->layer < other.layer; } // TODO test this
@@ -30,7 +30,6 @@ class GraphicalEntity : public virtual AbstractEntity {
 	Layer layer;
 
 	protected:
-	sf::RenderWindow const& window;
 	GraphicalElement* drawable;
 };
 
