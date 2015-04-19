@@ -1,44 +1,28 @@
-﻿La génération a démarré 14/04/2015 14:04:34.
-     1>Projet "C:\Programmation\platformGame\platformGame.vcxproj" sur le nœud 2 (Build cible(s)).
+﻿Build started 18/04/2015 19:04:28.
+     1>Project "F:\Programmation\platformGame\platformGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\BasicPlatform.cpp src\Entity\Entities\BoxBoundary.cpp src\Entity\Entities\Square.cpp src\Entity\Entities\TrailBullet.cpp src\Entity\EntityContactListener.cpp src\Entity\WorldEntity.cpp src\main.cpp
-         main.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-     1>src\main.cpp(140): error C2181: instruction else sans if correspondant non conforme
-         Génération de code en cours...
-         Compilation en cours...
-         BasicPlatform.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-         Compilation en cours...
-         BoxBoundary.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-         Compilation en cours...
-         Square.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-         Compilation en cours...
-         TrailBullet.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-         Compilation en cours...
-         EntityContactListener.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-         Compilation en cours...
+         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\BasicPlatform.cpp src\Entity\Entities\BoxBoundary.cpp src\Entity\Entities\Square.cpp src\Entity\Entities\TrailBullet.cpp src\Entity\EntityContactListener.cpp src\Entity\WorldEntity.cpp src\main.cpp
          WorldEntity.cpp
-     1>c:\programmation\platformgame\src\entity\PhysicalEntity.hpp(18): error C2662: 'b2World::DestroyBody' : impossible de convertir un pointeur 'this' de 'const b2World' en 'b2World &'
-                 La conversion perd les qualificateurs
-         Génération de code en cours...
-     1>Génération du projet "C:\Programmation\platformGame\platformGame.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
+         Generating Code...
+         Compiling...
+         main.cpp
+         EntityContactListener.cpp
+         TrailBullet.cpp
+         Square.cpp
+         BoxBoundary.cpp
+         BasicPlatform.cpp
+         Generating Code...
+       Link:
+         F:\Logiciels\VS 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Programmation\platformGame\Debug\platformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib/SFML/lib /LIBPATH:lib/Box2D/Build/vs2012 "sfml-system-d.lib" "sfml-window-d.lib" "sfml-graphics-d.lib" Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Programmation\platformGame\Debug\platformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Programmation\platformGame\Debug\platformGame.lib" /MACHINE:X86 Debug\BasicPlatform.obj
+         Debug\BoxBoundary.obj
+         Debug\Square.obj
+         Debug\TrailBullet.obj
+         Debug\EntityContactListener.obj
+         Debug\WorldEntity.obj
+         Debug\main.obj
+         platformGame.vcxproj -> F:\Programmation\platformGame\Debug\platformGame.exe
+     1>Done Building Project "F:\Programmation\platformGame\platformGame.vcxproj" (Build target(s)).
 
-ÉCHEC de la build.
+Build succeeded.
 
-Temps écoulé 00:00:14.70
+Time Elapsed 00:00:06.50

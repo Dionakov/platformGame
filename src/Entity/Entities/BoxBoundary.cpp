@@ -34,7 +34,7 @@ void BoxBoundary::set(b2Vec2 pos, b2Vec2 size) {
 	s->setOutlineThickness((size.x < size.y ? size.x : size.y)*PPM/30.f);
 	s->setOutlineColor(sf::Color(40, 40, 40));
 
-	this->drawable = reinterpret_cast<GraphicalElement*>(s);
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 
 	this->layer = BACKGROUND;
 }

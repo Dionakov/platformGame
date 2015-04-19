@@ -6,7 +6,7 @@
 
 /* TODO
  * !!! fix erase body bug !!!
- * think about graphical entities having multiple drawables
+ * think about graphical entities having multiple graphicalElements
  * finish code clean up
  * think about a way to integrate levels
  * think about gamestates
@@ -128,16 +128,17 @@ int main() {
 
 		fpsText.setString(sf::String(numToStr(floorf(framerate+0.5f))+" fps"));
 
-		view.setCenter(sq->getDrawable()->getPosition());
+		view.setCenter(sq->getGraphicalElement()->getPosition());
 		window.setView(view);
 
 		std::sort(graphicalEntities.begin(), graphicalEntities.end());
 
 		for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end();) {
 
-			if((*it)->isDead())
-				//(*it)->destroyBody();
+			if((*it)->isDead()) {
+				world.DestroyBody(const_cast<b2Body*>((*it)->getBody())); // argh my eyes. TODO remove this atrocity
 				it = physicalEntities.erase(it);
+			}
 			else {
 
 				(*it)->tick();
@@ -153,7 +154,7 @@ int main() {
 				it = graphicalEntities.erase(it);
 			else {
 
-				window.draw(*(*it)->getDrawable());
+				window.draw(*(*it)->getGraphicalElement());
 				it++;
 			}
 		}

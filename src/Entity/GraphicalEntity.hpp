@@ -21,16 +21,15 @@ class GraphicalEntity : public virtual AbstractEntity {
 
 	public:
 	GraphicalEntity(void) : AbstractEntity() {}
-	virtual ~GraphicalEntity() {}
-	GraphicalElement const* getDrawable(void) const { return this->drawable; }
+	virtual ~GraphicalEntity(void) {}
+	GraphicalElement const* getGraphicalElement(void) const { return this->graphicalElement; }
 	bool operator<(GraphicalEntity const& other) const { return this->layer < other.layer; } // TODO test this
-	Layer getLayer(void) const { return this->layer; }
 
 	public:
 	Layer layer;
 
 	protected:
-	GraphicalElement* drawable;
+	GraphicalElement* graphicalElement;
 };
 
 #endif

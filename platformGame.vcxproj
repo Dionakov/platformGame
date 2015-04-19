@@ -21,6 +21,7 @@
     <ClInclude Include="src\Entity\GraphicalEntity.hpp" />
     <ClInclude Include="src\Entity\PhysicalEntity.hpp" />
     <ClInclude Include="src\Entity\WorldEntity.hpp" />
+    <ClInclude Include="src\Level\LevelList.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp" />
