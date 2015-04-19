@@ -34,6 +34,12 @@
     <ClInclude Include="src\Level\LevelList.hpp">
       <Filter>src\Level</Filter>
     </ClInclude>
+    <ClInclude Include="src\Level\AbstractLevel.hpp">
+      <Filter>src\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Level\Levels\TestLevel.hpp">
+      <Filter>src\Level\Levels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -57,6 +63,12 @@
     <ClCompile Include="src\Entity\Entities\TrailBullet.cpp">
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\Level\Levels\TestLevel.cpp">
+      <Filter>src\Level\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Level\AbstractLevel.cpp">
+      <Filter>src\Level</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -70,6 +82,9 @@
     </Filter>
     <Filter Include="src\Level">
       <UniqueIdentifier>{e8a5102e-a5e0-499e-a711-5362c67cbe8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Level\Levels">
+      <UniqueIdentifier>{90d0cff7-639c-41f1-be1b-80113cd9351d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
