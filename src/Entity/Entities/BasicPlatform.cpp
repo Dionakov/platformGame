@@ -18,7 +18,7 @@ BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos) : W
 	s->setFillColor(sf::Color(110, 110, 110));
 	s->setOrigin(160.f,10.f);
 
-	this->drawable = reinterpret_cast<GraphicalElement*>(s);
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 
 	this->body->SetUserData((void*)this);
 }

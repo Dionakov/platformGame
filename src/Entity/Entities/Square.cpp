@@ -42,7 +42,7 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 	s->setFillColor(sf::Color::Black);
 	s->setOrigin(30.f,30.f);
 
-	this->drawable = reinterpret_cast<GraphicalElement*>(s);
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 
 	this->body->SetUserData((void*)this);
 }

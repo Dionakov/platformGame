@@ -14,15 +14,16 @@ TrailBullet::TrailBullet(b2World const* world, b2Body* body, b2Vec2 pos, bool di
 	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(40.f,6.f));
 	s->setFillColor(sf::Color::Yellow);
 	s->setOrigin(20.f, 3.f);
-	this->drawable = reinterpret_cast<GraphicalElement*>(s);
-	this->body->SetUserData("TrailBullet");
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
+	this->body->SetUserData(this);
 }
 
 void TrailBullet::tick(void) { 
 	
 	if(abs(body->GetPosition().x - startX)>=300.f/PPM)
 		dead = true;
-
+	
+	// TODO fix this
 	body->SetTransform(b2Vec2(body->GetPosition().x+(directionIsRight ? 1.f : -1.f), body->GetPosition().y), 0);
 	this->updateGraphics(); 
 }
@@ -30,11 +31,11 @@ void TrailBullet::tick(void) {
 b2BodyDef TrailBullet::getBodyDef(void) {
 
 	b2BodyDef bodyDef;
-	bodyDef.type = b2_staticBody;
+	bodyDef.type = b2_dynamicBody;
 	return bodyDef;
 }
 
 void TrailBullet::onBeginContact(b2Contact* contact) {
 
-
+	dead = true;
 }

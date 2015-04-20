@@ -21,6 +21,8 @@
     <ClInclude Include="src\Entity\GraphicalEntity.hpp" />
     <ClInclude Include="src\Entity\PhysicalEntity.hpp" />
     <ClInclude Include="src\Entity\WorldEntity.hpp" />
+    <ClInclude Include="src\Level\AbstractLevel.hpp" />
+    <ClInclude Include="src\Level\Levels\TestLevel.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp" />
@@ -29,6 +31,8 @@
     <ClCompile Include="src\Entity\Entities\TrailBullet.cpp" />
     <ClCompile Include="src\Entity\EntityContactListener.cpp" />
     <ClCompile Include="src\Entity\WorldEntity.cpp" />
+    <ClCompile Include="src\Level\AbstractLevel.cpp" />
+    <ClCompile Include="src\Level\Levels\TestLevel.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
