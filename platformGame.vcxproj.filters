@@ -31,9 +31,6 @@
     <ClInclude Include="src\Entity\Entities\TrailBullet.hpp">
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\Level\LevelList.hpp">
-      <Filter>src\Level</Filter>
-    </ClInclude>
     <ClInclude Include="src\Level\AbstractLevel.hpp">
       <Filter>src\Level</Filter>
     </ClInclude>

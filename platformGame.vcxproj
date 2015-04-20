@@ -22,7 +22,6 @@
     <ClInclude Include="src\Entity\PhysicalEntity.hpp" />
     <ClInclude Include="src\Entity\WorldEntity.hpp" />
     <ClInclude Include="src\Level\AbstractLevel.hpp" />
-    <ClInclude Include="src\Level\LevelList.hpp" />
     <ClInclude Include="src\Level\Levels\TestLevel.hpp" />
   </ItemGroup>
   <ItemGroup>

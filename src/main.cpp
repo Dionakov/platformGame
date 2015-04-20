@@ -62,7 +62,9 @@ int main() {
 	std::vector<AbstractLevel*> levels;
 	levels.push_back(new TestLevel(world, window));
 
-	AbstractLevel* currentLevel = (*levels.begin());
+	int currentLevel = 0;
+
+	levels.at(0)->initialize();
 
 	while(window.isOpen()) {
 
@@ -77,9 +79,16 @@ int main() {
 
 		window.clear(CLEARCOLOR);
 
-		levels.at
+		levels.at(currentLevel)->render();
 
 		window.display();
+
+		if(levels.at(currentLevel)->isFinished() && currentLevel < levels.size()) {
+
+			currentLevel++;
+			levels.at(currentLevel)->initialize();
+		}
+			
 	}
 
 	return EXIT_SUCCESS;

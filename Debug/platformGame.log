@@ -1,16 +1,10 @@
-﻿Build started 18/04/2015 19:04:28.
+﻿Build started 20/04/2015 20:31:14.
      1>Project "F:\Programmation\platformGame\platformGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\BasicPlatform.cpp src\Entity\Entities\BoxBoundary.cpp src\Entity\Entities\Square.cpp src\Entity\Entities\TrailBullet.cpp src\Entity\EntityContactListener.cpp src\Entity\WorldEntity.cpp src\main.cpp
-         WorldEntity.cpp
-         Generating Code...
-         Compiling...
+         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Level\Levels\TestLevel.cpp src\main.cpp
          main.cpp
-         EntityContactListener.cpp
-         TrailBullet.cpp
-         Square.cpp
-         BoxBoundary.cpp
-         BasicPlatform.cpp
+     1>src\main.cpp(86): warning C4018: '<' : signed/unsigned mismatch
+         TestLevel.cpp
          Generating Code...
        Link:
          F:\Logiciels\VS 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Programmation\platformGame\Debug\platformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib/SFML/lib /LIBPATH:lib/Box2D/Build/vs2012 "sfml-system-d.lib" "sfml-window-d.lib" "sfml-graphics-d.lib" Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Programmation\platformGame\Debug\platformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Programmation\platformGame\Debug\platformGame.lib" /MACHINE:X86 Debug\BasicPlatform.obj
@@ -19,10 +13,12 @@
          Debug\TrailBullet.obj
          Debug\EntityContactListener.obj
          Debug\WorldEntity.obj
+         Debug\AbstractLevel.obj
+         Debug\TestLevel.obj
          Debug\main.obj
          platformGame.vcxproj -> F:\Programmation\platformGame\Debug\platformGame.exe
      1>Done Building Project "F:\Programmation\platformGame\platformGame.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.50
+Time Elapsed 00:00:02.57
