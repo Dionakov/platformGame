@@ -37,6 +37,9 @@
     <ClInclude Include="src\Level\Levels\TestLevel.hpp">
       <Filter>src\Level\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="src\sfmlToBox2D.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="src\Level\AbstractLevel.cpp">
       <Filter>src\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sfmlToBox2D.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
