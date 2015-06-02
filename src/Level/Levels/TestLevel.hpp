@@ -12,6 +12,7 @@ class TestLevel : public AbstractLevel {
 	virtual void tick(void);
 	virtual void render(void);
 	virtual bool isFinished(void);
+	virtual void pollEvent(sf::Event e);
 
 	protected:
 	Square* player; 

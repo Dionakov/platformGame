@@ -32,13 +32,16 @@
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
     <ClInclude Include="src\Level\AbstractLevel.hpp">
-      <Filter>src\Level</Filter>
+      <Filter>src\Entity\Level</Filter>
     </ClInclude>
     <ClInclude Include="src\Level\Levels\TestLevel.hpp">
-      <Filter>src\Level\Levels</Filter>
+      <Filter>src\Entity\Level\Levels</Filter>
     </ClInclude>
     <ClInclude Include="src\sfmlToBox2D.hpp">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Entities\BasicSlope.hpp">
+      <Filter>src\Entity\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -64,13 +67,16 @@
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
     <ClCompile Include="src\Level\Levels\TestLevel.cpp">
-      <Filter>src\Level\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Level\AbstractLevel.cpp">
-      <Filter>src\Level</Filter>
+      <Filter>src\Entity\Level\Levels</Filter>
     </ClCompile>
     <ClCompile Include="src\sfmlToBox2D.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entities\BasicSlope.cpp">
+      <Filter>src\Entity\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Level\AbstractLevel.cpp">
+      <Filter>src\Entity\Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,10 +89,10 @@
     <Filter Include="src\Entity\Entities">
       <UniqueIdentifier>{8b48b7cb-4461-4f1b-aa56-e32e5f01d67e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Level">
+    <Filter Include="src\Entity\Level">
       <UniqueIdentifier>{e8a5102e-a5e0-499e-a711-5362c67cbe8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Level\Levels">
+    <Filter Include="src\Entity\Level\Levels">
       <UniqueIdentifier>{90d0cff7-639c-41f1-be1b-80113cd9351d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

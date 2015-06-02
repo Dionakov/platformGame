@@ -61,6 +61,7 @@ int main() {
 
 	std::vector<AbstractLevel*> levels;
 	levels.push_back(new TestLevel(world, window));
+	levels.push_back(new TestLevel(world, window));
 
 	int currentLevel = 0;
 
@@ -73,6 +74,8 @@ int main() {
 		
 			if(e.type == sf::Event::Closed)
 				window.close();
+
+			levels.at(currentLevel)->pollEvent(e);
 		}
 		
 		levels.at(currentLevel)->tick();
@@ -83,11 +86,15 @@ int main() {
 
 		window.display();
 
-		if(levels.at(currentLevel)->isFinished() && currentLevel < levels.size()) {
+		/*if(levels.at(currentLevel)->isFinished() && currentLevel < levels.size()-1) {
 
 			currentLevel++;
 			levels.at(currentLevel)->initialize();
-		}
+		}*/
+
+		// looping on first level. Change that when done playing
+		if(levels.at(currentLevel)->isFinished())
+			levels.at(currentLevel)->initialize();
 			
 	}
 

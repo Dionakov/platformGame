@@ -14,6 +14,7 @@
     <ClInclude Include="src\constants.hpp" />
     <ClInclude Include="src\Entity\AbstractEntity.hpp" />
     <ClInclude Include="src\Entity\Entities\BasicPlatform.hpp" />
+    <ClInclude Include="src\Entity\Entities\BasicSlope.hpp" />
     <ClInclude Include="src\Entity\Entities\BoxBoundary.hpp" />
     <ClInclude Include="src\Entity\Entities\Square.hpp" />
     <ClInclude Include="src\Entity\Entities\TrailBullet.hpp" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp" />
+    <ClCompile Include="src\Entity\Entities\BasicSlope.cpp" />
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp" />
     <ClCompile Include="src\Entity\Entities\Square.cpp" />
     <ClCompile Include="src\Entity\Entities\TrailBullet.cpp" />

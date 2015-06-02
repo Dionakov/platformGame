@@ -12,7 +12,7 @@ class PhysicalEntity : public virtual AbstractEntity {
 
 	public:
 	PhysicalEntity(b2World const* world, b2Body* body) : AbstractEntity(), world(world), body(body) {}
-	b2Body const* getBody(void) const { return this->body; }
+	b2Body* getBody(void) const { return this->body; } // not const. TODO See if there's a better way to do it.
 	virtual void onBeginContact(b2Contact* contact) {}
 	virtual void onEndContact(b2Contact* contact) {}
 

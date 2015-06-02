@@ -12,15 +12,18 @@ class Square : public WorldEntity {
 
 	static b2BodyDef getBodyDef(void);
 
-	virtual void tick(void);
 	virtual void onBeginContact(b2Contact* contact);
 	virtual void onEndContact(b2Contact* contact);
+	virtual void tick(void);
 
 	void jump(void);
 	
 	protected:
 	bool contactLeft;
 	bool contactRight;
+
+	b2Fixture* sq;
+	b2Fixture* circle;
 
 	int numFootContacts;
 };

@@ -17,6 +17,7 @@ class AbstractLevel {
 	virtual void tick(void) = 0;
 	virtual void render(void);
 	virtual bool isFinished(void) = 0;
+	virtual void pollEvent(sf::Event e) {}
 
 	protected:
 	GraphicalEntityList graphicalEntities;

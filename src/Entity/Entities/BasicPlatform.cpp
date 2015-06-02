@@ -7,11 +7,12 @@ BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos) : W
 	fixtureDef.friction = 0.3f;
 		
 	b2PolygonShape polygonShape;
-	polygonShape.SetAsBox(160.f/PPM, 10.f/PPM);
-		
+	polygonShape.SetAsBox(140.f/PPM, 10.f/PPM); // 160.f
+
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef);
+
 	body->SetTransform(pos, 0);
 
 	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(320.f,20.f));

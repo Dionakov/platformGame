@@ -3,44 +3,50 @@
 #include "../../constants.hpp"
 
 Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), numFootContacts(0), contactLeft(false), contactRight(false) {
-
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
 	fixtureDef.friction = 0.3f;
 		
 	b2PolygonShape polygonShape;
-	polygonShape.SetAsBox(29.f/PPM, 30.f/PPM);
+	polygonShape.SetAsBox(29.f/PPM, 40.f/PPM);
 		
 	fixtureDef.shape = &polygonShape;
 
-	body->CreateFixture(&fixtureDef);
+	sq = body->CreateFixture(&fixtureDef);
+
+	b2CircleShape circleShape;
+	circleShape.m_p.Set(0.f,10.f/PPM);
+	circleShape.m_radius = 30.f/PPM;
+
+	fixtureDef.shape = &circleShape;
+	//circle = body->CreateFixture(&fixtureDef);
 
 	fixtureDef.density = 1.f;
 	fixtureDef.friction = 0.f;
 	fixtureDef.isSensor = true;
 
-	polygonShape.SetAsBox(25.f/PPM, 2.f/PPM, b2Vec2(0.f, 29.f/PPM), 0);
+	polygonShape.SetAsBox(22.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"FootSensor");
 
 	fixtureDef.isSensor = false;
 	fixtureDef.friction = 300.f;
-	polygonShape.SetAsBox(1.f/PPM, 28.f/PPM, b2Vec2(-28.f/PPM, 0.f), 0);
+	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(-28.f/PPM, 0.f), 0);
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"LeftSquareSide");
 
-	polygonShape.SetAsBox(1.f/PPM, 28.f/PPM, b2Vec2(28.f/PPM,0.f), 0);
+	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(28.f/PPM,0.f), 0);
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"RightSquareSide");
 
 	body->SetTransform(b2Vec2(300.f/PPM, 300.f/PPM), 0);
 
-	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(60.f,60.f));
+	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(60.f,80.f));
 	s->setFillColor(sf::Color::Black);
-	s->setOrigin(30.f,30.f);
+	s->setOrigin(30.f,40.f);
 
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 
@@ -57,7 +63,7 @@ b2BodyDef Square::getBodyDef(void) {
 
 void Square::tick(void) {
 
-	// keyboard movement
+		// keyboard movement
 	if(numFootContacts > 0) { // on ground
 
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
@@ -69,8 +75,11 @@ void Square::tick(void) {
 				!sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
 				!contactRight)
 			body->SetLinearVelocity(b2Vec2(600.f/PPM, body->GetLinearVelocity().y));
-		else
+		else {
 			body->SetLinearVelocity(b2Vec2(0.f, body->GetLinearVelocity().y));
+			body->ApplyForceToCenter(b2Vec2(0.f,-500.f),true);
+		}
+
 	}
 
 	else { // jumping or falling
@@ -87,18 +96,6 @@ void Square::tick(void) {
 	}
 
 	this->updateGraphics();
-}
-
-void Square::jump(void) {
-
-	if(numFootContacts > 0)
-		body->ApplyLinearImpulse(b2Vec2(0.f, -body->GetMass()*35), body->GetWorldCenter(), true);
-
-	else if(contactLeft)
-		body->ApplyLinearImpulse(b2Vec2(body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
-
-	else if(contactRight)
-		body->ApplyLinearImpulse(b2Vec2(-body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
 }
 
 void Square::onBeginContact(b2Contact* contact) {
@@ -163,4 +160,16 @@ void Square::onEndContact(b2Contact* contact) {
 		else if(userData == "RightSquareSide")
 			contactRight = false;
 	}
+}
+
+void Square::jump(void) {
+
+	if(numFootContacts > 0)
+		body->ApplyLinearImpulse(b2Vec2(0.f, -body->GetMass()*35), body->GetWorldCenter(), true);
+
+	else if(contactLeft)
+		body->ApplyLinearImpulse(b2Vec2(body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
+
+	else if(contactRight)
+		body->ApplyLinearImpulse(b2Vec2(-body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
 }
