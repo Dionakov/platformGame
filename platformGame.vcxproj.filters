@@ -32,10 +32,10 @@
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
     <ClInclude Include="src\Level\AbstractLevel.hpp">
-      <Filter>src\Entity\Level</Filter>
+      <Filter>src\Level</Filter>
     </ClInclude>
     <ClInclude Include="src\Level\Levels\TestLevel.hpp">
-      <Filter>src\Entity\Level\Levels</Filter>
+      <Filter>src\Level\Levels</Filter>
     </ClInclude>
     <ClInclude Include="src\sfmlToBox2D.hpp">
       <Filter>src</Filter>
@@ -67,7 +67,7 @@
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
     <ClCompile Include="src\Level\Levels\TestLevel.cpp">
-      <Filter>src\Entity\Level\Levels</Filter>
+      <Filter>src\Level\Levels</Filter>
     </ClCompile>
     <ClCompile Include="src\sfmlToBox2D.cpp">
       <Filter>src</Filter>
@@ -76,7 +76,7 @@
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
     <ClCompile Include="src\Level\AbstractLevel.cpp">
-      <Filter>src\Entity\Level</Filter>
+      <Filter>src\Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,10 +89,10 @@
     <Filter Include="src\Entity\Entities">
       <UniqueIdentifier>{8b48b7cb-4461-4f1b-aa56-e32e5f01d67e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Entity\Level">
+    <Filter Include="src\Level">
       <UniqueIdentifier>{e8a5102e-a5e0-499e-a711-5362c67cbe8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Entity\Level\Levels">
+    <Filter Include="src\Level\Levels">
       <UniqueIdentifier>{90d0cff7-639c-41f1-be1b-80113cd9351d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

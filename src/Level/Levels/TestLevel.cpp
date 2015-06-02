@@ -1,3 +1,5 @@
+#include <iostream>
+#include <sstream>
 #include "TestLevel.hpp"
 #include "../../Entity/Entities/BasicPlatform.hpp"
 #include "../../Entity/Entities/BasicSlope.hpp"
@@ -27,6 +29,17 @@ void TestLevel::initialize(void) {
 	player = new Square(&world, world.CreateBody(&Square::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
+
+	sf::Font* font = new sf::Font;
+	if(!font->loadFromFile("resources/fonts/calibri.ttf")) {
+
+		std::cout << "Couldn't load font." << std::endl;
+		return;
+	}
+	fpsText = sf::Text(sf::String("xx fps"), *font, 50U);
+	fpsText.setPosition(window.getSize().x - fpsText.getGlobalBounds().width - 20.f, 20.f);
+	fpsText.setColor(sf::Color::Yellow);
+	fpsClock.restart();
 }
 
 void TestLevel::tick(void) { 
@@ -34,7 +47,12 @@ void TestLevel::tick(void) {
 	for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
 		(*it)->tick();
 
+	float framerate = 1.f/fpsClock.restart().asSeconds();
+
 	world.Step(1.f/60.f, 6, 2);
+	std::ostringstream ss;
+	ss << framerate;
+	fpsText.setString(ss.str()+" fps");
 }
 
 void TestLevel::pollEvent(sf::Event e) {
@@ -65,6 +83,8 @@ void TestLevel::pollEvent(sf::Event e) {
 void TestLevel::render(void) {
 
 	AbstractLevel::render();
+	window.setView(window.getDefaultView());
+	window.draw(fpsText);
 
 	window.setView(sf::View(physicalVecToGraphicalVec(player->getBody()->GetPosition()), sf::Vector2f(1600.f,1200.f)));
 }
