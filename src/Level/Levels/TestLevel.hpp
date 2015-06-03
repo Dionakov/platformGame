@@ -16,6 +16,8 @@ class TestLevel : public AbstractLevel {
 
 	protected:
 	Square* player; 
+	sf::Text fpsText;
+	sf::Clock fpsClock;
 };
 
 #endif

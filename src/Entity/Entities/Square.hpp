@@ -21,6 +21,8 @@ class Square : public WorldEntity {
 	protected:
 	bool contactLeft;
 	bool contactRight;
+	bool contactBottomRight;
+	bool contactBottomLeft;
 
 	b2Fixture* sq;
 	b2Fixture* circle;

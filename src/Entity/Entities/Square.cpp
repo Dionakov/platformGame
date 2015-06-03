@@ -2,7 +2,7 @@
 #include <iostream>
 #include "../../constants.hpp"
 
-Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), numFootContacts(0), contactLeft(false), contactRight(false) {
+Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), numFootContacts(0), contactLeft(false), contactRight(false), contactBottomRight(false),contactBottomLeft(false) {
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
 	fixtureDef.friction = 0.3f;
@@ -25,7 +25,11 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 	fixtureDef.friction = 0.f;
 	fixtureDef.isSensor = true;
 
-	polygonShape.SetAsBox(22.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
+<<<<<<< HEAD
+	polygonShape.SetAsBox(28.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
+=======
+	polygonShape.SetAsBox(25.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
+>>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"FootSensor");
@@ -42,7 +46,15 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"RightSquareSide");
 
-	body->SetTransform(b2Vec2(300.f/PPM, 300.f/PPM), 0);
+	body->SetTransform(b2Vec2(100.f/PPM, 100.f/PPM), 0);
+
+	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(28.f/PPM,35.f/PPM), 0);
+	fixtureDef.shape = &polygonShape;
+	body->CreateFixture(&fixtureDef)->SetUserData((void*)"BottomRightSquareCorner");
+
+	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(-28.f/PPM,35.f/PPM),0);
+	fixtureDef.shape = &polygonShape;
+	body->CreateFixture(&fixtureDef)->SetUserData((void*)"BottomLeftSquareCorner");
 
 	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(60.f,80.f));
 	s->setFillColor(sf::Color::Black);
@@ -63,7 +75,7 @@ b2BodyDef Square::getBodyDef(void) {
 
 void Square::tick(void) {
 
-		// keyboard movement
+	// keyboard movement
 	if(numFootContacts > 0) { // on ground
 
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
@@ -77,9 +89,14 @@ void Square::tick(void) {
 			body->SetLinearVelocity(b2Vec2(600.f/PPM, body->GetLinearVelocity().y));
 		else {
 			body->SetLinearVelocity(b2Vec2(0.f, body->GetLinearVelocity().y));
-			body->ApplyForceToCenter(b2Vec2(0.f,-500.f),true);
 		}
-
+<<<<<<< HEAD
+		if((sf::Keyboard::isKeyPressed(sf::Keyboard::D) && contactBottomRight) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && contactBottomLeft))
+			body->ApplyLinearImpulse(b2Vec2(0.f,-10.f*body->GetMass()),body->GetWorldCenter(),true);
+		else
+			body->ApplyForceToCenter(b2Vec2(0.f,100.f*body->GetMass()),true);
+=======
+>>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 	}
 
 	else { // jumping or falling
@@ -115,6 +132,10 @@ void Square::onBeginContact(b2Contact* contact) {
 			contactLeft = true;
 		else if(userData == "RightSquareSide")
 			contactRight = true;
+		else if(userData == "BottomRightSquareCorner")
+			contactBottomRight = true;
+		else if(userData == "BottomLeftSquareCorner")
+			contactBottomLeft = true;
 	}
 
 	else if(fixtureB->GetUserData() != 0) {
@@ -127,6 +148,10 @@ void Square::onBeginContact(b2Contact* contact) {
 			contactLeft = true;
 		else if(userData == "RightSquareSide")
 			contactRight = true;
+		else if(userData == "BottomRightSquareCorner")
+			contactBottomRight = true;
+		else if(userData == "BottomLeftSquareCorner")
+			contactBottomLeft = true;
 	}
 }
 
@@ -147,6 +172,10 @@ void Square::onEndContact(b2Contact* contact) {
 			contactLeft = false;
 		else if(userData == "RightSquareSide")
 			contactRight = false;
+		else if(userData == "BottomRightSquareCorner")
+			contactBottomRight = false;
+		else if(userData == "BottomLeftSquareCorner")
+			contactBottomLeft = false;
 	}
 
 	else if(fixtureB->GetUserData() != 0) {
@@ -159,6 +188,10 @@ void Square::onEndContact(b2Contact* contact) {
 			contactLeft = false;
 		else if(userData == "RightSquareSide")
 			contactRight = false;
+		else if(userData == "BottomRightSquareCorner")
+			contactBottomRight = false;
+		else if(userData == "BottomLeftSquareCorner")
+			contactBottomLeft = false;
 	}
 }
 

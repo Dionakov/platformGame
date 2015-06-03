@@ -1,13 +1,17 @@
 #include "BasicPlatform.hpp"
 #include "../../constants.hpp"
 
-BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos) : WorldEntity(world, body) {
+BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos, std::string str_texture) : WorldEntity(world, body) {
 
 	b2FixtureDef fixtureDef;
 	fixtureDef.friction = 0.3f;
 		
 	b2PolygonShape polygonShape;
-	polygonShape.SetAsBox(140.f/PPM, 10.f/PPM); // 160.f
+<<<<<<< HEAD
+	polygonShape.SetAsBox(160.f/PPM, 10.f/PPM); // 160.f
+=======
+	polygonShape.SetAsBox(32.f/PPM, 32.f/PPM);
+>>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 
 	fixtureDef.shape = &polygonShape;
 
@@ -15,11 +19,15 @@ BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos) : W
 
 	body->SetTransform(pos, 0);
 
-	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(320.f,20.f));
-	s->setFillColor(sf::Color(110, 110, 110));
-	s->setOrigin(160.f,10.f);
 
-	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
+	if(!texture.loadFromFile(str_texture));
+		std::cout << "Erreur" << std::endl;
+
+	sprite.setTexture(texture);
+	sprite.setOrigin(32, 32);
+	
+
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(&sprite);
 
 	this->body->SetUserData((void*)this);
 }
