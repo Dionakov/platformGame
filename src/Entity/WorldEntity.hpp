@@ -3,6 +3,7 @@
 
 #include "PhysicalEntity.hpp"
 #include "GraphicalEntity.hpp"
+#include "../constants.hpp"
 
 /*!
  * \class WorldEntity WorldEntity.hpp

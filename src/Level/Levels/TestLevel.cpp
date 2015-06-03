@@ -11,6 +11,7 @@
 TestLevel::TestLevel(b2World& world, sf::RenderWindow& window) : AbstractLevel(world, window) {
 
 	world.SetContactListener(new EntityContactListener);
+
 }
 
 void TestLevel::initialize(void) {
@@ -22,13 +23,38 @@ void TestLevel::initialize(void) {
 	physicalEntities.clear();
 	graphicalEntities.clear();
 
-	BasicPlatform* platform = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), b2Vec2(5.f, 30.f));
-	physicalEntities.push_back(platform);
-	graphicalEntities.push_back(platform);	
+	//Chargement niveau
+	sf::Image bitmap;
+	if(!bitmap.loadFromFile("resources/levels/niveau.png"));
+		std::cout << "Erreur resources/levels/niveau.png" << std::endl;
+
+	for(int i = 0; i < bitmap.getSize().x; i++)
+	{
+		for(int j = 0; j < bitmap.getSize().y; j++)
+		{
+			sf::Color col = bitmap.getPixel(i, j);
+			int val = col.r * pow(2, 16) + col.g * pow(2,8) + col.b;
+			//std::cout << val << std::endl;
+			if(val != 0)
+			{
+				float x = (i * 64) / PPM;
+				float y = (j * 64) / PPM;
+
+				BasicPlatform* platform = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), b2Vec2(x, y), "resources/sprites/testTiles/" +  std::to_string(val) + ".png");
+				physicalEntities.push_back(platform);
+				graphicalEntities.push_back(platform);
+			}
+		}
+	}
+
+
+
 
 	player = new Square(&world, world.CreateBody(&Square::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
+
+
 
 	sf::Font* font = new sf::Font;
 	if(!font->loadFromFile("resources/fonts/calibri.ttf")) {
@@ -49,7 +75,7 @@ void TestLevel::tick(void) {
 
 	float framerate = 1.f/fpsClock.restart().asSeconds();
 
-	world.Step(1.f/60.f, 6, 2);
+	world.Step(1.f/30.f, 6, 2);
 	std::ostringstream ss;
 	ss << framerate;
 	fpsText.setString(ss.str()+" fps");

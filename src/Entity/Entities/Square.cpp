@@ -42,7 +42,7 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"RightSquareSide");
 
-	body->SetTransform(b2Vec2(300.f/PPM, 300.f/PPM), 0);
+	body->SetTransform(b2Vec2(100.f/PPM, 100.f/PPM), 0);
 
 	sf::RectangleShape* s = new sf::RectangleShape(sf::Vector2f(60.f,80.f));
 	s->setFillColor(sf::Color::Black);
