@@ -7,11 +7,7 @@ BasicPlatform::BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos, std
 	fixtureDef.friction = 0.3f;
 		
 	b2PolygonShape polygonShape;
-<<<<<<< HEAD
-	polygonShape.SetAsBox(160.f/PPM, 10.f/PPM); // 160.f
-=======
 	polygonShape.SetAsBox(32.f/PPM, 32.f/PPM);
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 
 	fixtureDef.shape = &polygonShape;
 

@@ -1,10 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿La génération a démarré 03/06/2015 16:55:34.
      1>Projet "C:\Programmation\platformGame\platformGame.vcxproj" sur le nœud 2 (Build cible(s)).
 =======
 ﻿La génération a démarré 03/06/2015 16:53:56.
      1>Projet "D:\C++ Projects\JeuRoch\platformGame.vcxproj" sur le nœud 2 (Build cible(s)).
 >>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
+=======
+﻿La génération a démarré 03/06/2015 16:53:56.
+     1>Projet "D:\C++ Projects\JeuRoch\platformGame.vcxproj" sur le nœud 2 (Build cible(s)).
+>>>>>>> origin/nico
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.cpp
          main.cpp
@@ -21,6 +26,7 @@
          Debug\main.obj
          Debug\sfmlToBox2D.obj
 <<<<<<< HEAD
+<<<<<<< HEAD
          platformGame.vcxproj -> C:\Programmation\platformGame\Debug\platformGame.exe
      1>Génération du projet "C:\Programmation\platformGame\platformGame.vcxproj" terminée (Build cible(s)).
 
@@ -35,3 +41,11 @@ La génération a réussi.
 
 Temps écoulé 00:00:01.61
 >>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
+=======
+         platformGame.vcxproj -> D:\C++ Projects\JeuRoch\Debug\platformGame.exe
+     1>Génération du projet "D:\C++ Projects\JeuRoch\platformGame.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:01.61
+>>>>>>> origin/nico

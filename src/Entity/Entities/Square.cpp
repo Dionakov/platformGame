@@ -25,11 +25,8 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 	fixtureDef.friction = 0.f;
 	fixtureDef.isSensor = true;
 
-<<<<<<< HEAD
 	polygonShape.SetAsBox(28.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
-=======
-	polygonShape.SetAsBox(25.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
+
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"FootSensor");
@@ -90,13 +87,10 @@ void Square::tick(void) {
 		else {
 			body->SetLinearVelocity(b2Vec2(0.f, body->GetLinearVelocity().y));
 		}
-<<<<<<< HEAD
 		if((sf::Keyboard::isKeyPressed(sf::Keyboard::D) && contactBottomRight) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && contactBottomLeft))
 			body->ApplyLinearImpulse(b2Vec2(0.f,-10.f*body->GetMass()),body->GetWorldCenter(),true);
 		else
 			body->ApplyForceToCenter(b2Vec2(0.f,100.f*body->GetMass()),true);
-=======
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 	}
 
 	else { // jumping or falling

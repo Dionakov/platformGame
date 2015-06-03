@@ -49,40 +49,18 @@ void TestLevel::initialize(void) {
 	}
 
 
-
-
-	for(unsigned int i = 0; i < 10; i++) {
-
-		platform = new BasicPlatform(&world,world.CreateBody(&BasicPlatform::getBodyDef()),b2Vec2(5.f+(i*160.f/PPM),30.f));
-		physicalEntities.push_back(platform);
-		graphicalEntities.push_back(platform);
-	}
-
-	BoxBoundary* bb = new BoxBoundary(&world,world.CreateBody(&BoxBoundary::getBodyDef()));
-	bb->set(b2Vec2(0.f,0.f),b2Vec2(2000.f/PPM,1300.f/PPM));
-	physicalEntities.push_back(bb);
-	graphicalEntities.push_back(bb);
-
 	player = new Square(&world, world.CreateBody(&Square::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 	sf::Font* font = new sf::Font;
 	if(!font->loadFromFile("resources/fonts/calibri.ttf")) {
 
 		std::cout << "Couldn't load font." << std::endl;
 		return;
 	}
-<<<<<<< HEAD
 	fpsText = sf::Text(sf::String("xxxxxx fps"), *font, 30U);
-=======
-	fpsText = sf::Text(sf::String("xx fps"), *font, 50U);
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
+
 	fpsText.setPosition(window.getSize().x - fpsText.getGlobalBounds().width - 20.f, 20.f);
 	fpsText.setColor(sf::Color::Yellow);
 	fpsClock.restart();
@@ -95,11 +73,7 @@ void TestLevel::tick(void) {
 
 	float framerate = 1.f/fpsClock.restart().asSeconds();
 
-<<<<<<< HEAD
 	world.Step(1.f/60.f, 6, 2);
-=======
-	world.Step(1.f/30.f, 6, 2);
->>>>>>> 46dca4cfb7270d68c27469d9d17948bd4d411eca
 	std::ostringstream ss;
 	ss << framerate;
 	fpsText.setString(ss.str()+" fps");
