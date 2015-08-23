@@ -28,6 +28,21 @@ void TestLevel::initialize(void) {
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
 
+	BasicPlatform* platforms[6];
+
+	platforms[0] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(6.f,126.f)), graphicalVecToPhysicalVec(sf::Vector2f((274.f-6.f)/2,(480.f-126.f)/2)));
+	platforms[1] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(520.f,136.f)), graphicalVecToPhysicalVec(sf::Vector2f((852.f-520.f)/2,(188.f-136.f)/2)));
+	platforms[2] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(1254.f,14.f)), graphicalVecToPhysicalVec(sf::Vector2f((1600.f-1254.f)/2,(80.f-14.f)/2)));
+	platforms[3] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(160.f,860.f)), graphicalVecToPhysicalVec(sf::Vector2f((700.f-160.f)/2,(930.f-860.f)/2)));
+	platforms[4] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(990.f,466.f)), graphicalVecToPhysicalVec(sf::Vector2f((1056.f-990.f)/2,(600.f-466.f)/2)));
+	platforms[5] = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), graphicalVecToPhysicalVec(sf::Vector2f(1330.f,460.f)), graphicalVecToPhysicalVec(sf::Vector2f((1600.f-1330.f)/2,(850.f-460.f)/2)));
+
+	for(unsigned int i(0); i < 6; i++) {
+
+		physicalEntities.push_back(platforms[i]);
+		graphicalEntities.push_back(platforms[i]);
+	}
+
 	sf::Font* font = new sf::Font;
 	if(!font->loadFromFile("resources/fonts/calibri.ttf")) {
 
