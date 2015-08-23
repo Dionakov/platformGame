@@ -7,7 +7,7 @@
 class BasicPlatform : public WorldEntity {
 
 	public:
-		BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos, std::string str_texture = "resources/sprites/testTiles/barre.png");
+		BasicPlatform(b2World const* world, b2Body* body, b2Vec2 pos);
 
 	static b2BodyDef getBodyDef(void);
 
@@ -16,7 +16,6 @@ class BasicPlatform : public WorldEntity {
 
 	private:
 		sf::Texture texture;
-		sf::Sprite sprite;
 
 };
 

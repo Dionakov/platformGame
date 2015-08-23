@@ -2,7 +2,13 @@
 #include <iostream>
 #include "../../constants.hpp"
 
-Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), numFootContacts(0), contactLeft(false), contactRight(false), contactBottomRight(false),contactBottomLeft(false) {
+Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), 
+													 numFootContacts(0), 
+													 contactLeft(false), 
+													 contactRight(false), 
+													 contactBottomRight(false),
+													 contactBottomLeft(false) 
+{
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
 	fixtureDef.friction = 0.3f;
@@ -11,8 +17,7 @@ Square::Square(b2World const* world, b2Body* body) : WorldEntity(world, body), n
 	polygonShape.SetAsBox(29.f/PPM, 40.f/PPM);
 		
 	fixtureDef.shape = &polygonShape;
-
-	sq = body->CreateFixture(&fixtureDef);
+	body->CreateFixture(&fixtureDef);
 
 	b2CircleShape circleShape;
 	circleShape.m_p.Set(0.f,10.f/PPM);
@@ -96,7 +101,7 @@ void Square::tick(void) {
 	else { // jumping or falling
 
 		if(contactLeft || contactRight)
-			body->ApplyForceToCenter(b2Vec2(0.f,-60.f*body->GetMass()), true);
+			body->ApplyForceToCenter(b2Vec2((contactLeft ? -2.f : 2.f)*body->GetMass(),-60.f*body->GetMass()), true);
 
 		body->SetLinearVelocity(b2Vec2(body->GetLinearVelocity().x*0.98f, body->GetLinearVelocity().y));
 
@@ -199,4 +204,24 @@ void Square::jump(void) {
 
 	else if(contactRight)
 		body->ApplyLinearImpulse(b2Vec2(-body->GetMass()*20, -body->GetMass()*35), body->GetWorldCenter(), true);
+}
+
+void Square::impulseDown(void) {
+
+	body->ApplyLinearImpulse(b2Vec2(0.f,500.f),body->GetWorldCenter(),true);
+}
+
+std::string Square::getInfo(void) const {
+
+	std::string ret("grounded : ");
+	ret += numFootContacts > 0 ? "TRUE" : "";
+	ret += "\nleftContact : ";
+	ret += contactLeft ? "TRUE" : "";
+	ret += "\nrightContact : ";
+	ret += contactRight ? "TRUE" : "";
+	ret += "\nbottomLeftContact : ";
+	ret += contactBottomLeft ? "TRUE" : "";
+	ret += "\nbottomRightContact : ";
+	ret += contactBottomRight ? "TRUE" : "";
+	return ret;
 }

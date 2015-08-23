@@ -24,31 +24,6 @@ void TestLevel::initialize(void) {
 	physicalEntities.clear();
 	graphicalEntities.clear();
 
-	//Chargement niveau
-	sf::Image bitmap;
-	if(!bitmap.loadFromFile("resources/levels/niveau.png"));
-		std::cout << "Erreur resources/levels/niveau.png" << std::endl;
-
-	for(int i = 0; i < bitmap.getSize().x; i++)
-	{
-		for(int j = 0; j < bitmap.getSize().y; j++)
-		{
-			sf::Color col = bitmap.getPixel(i, j);
-			int val = col.r * pow(2, 16) + col.g * pow(2,8) + col.b;
-			//std::cout << val << std::endl;
-			if(val != 0)
-			{
-				float x = (i * 64) / PPM;
-				float y = (j * 64) / PPM;
-
-				BasicPlatform* platform = new BasicPlatform(&world, world.CreateBody(&BasicPlatform::getBodyDef()), b2Vec2(x, y), "resources/sprites/testTiles/" +  std::to_string(val) + ".png");
-				physicalEntities.push_back(platform);
-				graphicalEntities.push_back(platform);
-			}
-		}
-	}
-
-
 	player = new Square(&world, world.CreateBody(&Square::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
@@ -64,6 +39,8 @@ void TestLevel::initialize(void) {
 	fpsText.setPosition(window.getSize().x - fpsText.getGlobalBounds().width - 20.f, 20.f);
 	fpsText.setColor(sf::Color::Yellow);
 	fpsClock.restart();
+	playerInfoText = sf::Text(sf::String(""), *font, 14U);
+	playerInfoText.setColor(sf::Color::Blue);
 }
 
 void TestLevel::tick(void) { 
@@ -71,12 +48,15 @@ void TestLevel::tick(void) {
 	for(PhysicalEntityList::iterator it = physicalEntities.begin(); it != physicalEntities.end(); it++)
 		(*it)->tick();
 
+	playerInfoText.setString(player->getInfo());
+	playerInfoText.setPosition(sf::Vector2f(player->getBody()->GetPosition().x*PPM+40.f,player->getBody()->GetPosition().y*PPM+40.f));
+
 	float framerate = 1.f/fpsClock.restart().asSeconds();
 
 	world.Step(1.f/60.f, 6, 2);
 	std::ostringstream ss;
 	ss << framerate;
-	fpsText.setString(ss.str()+" fps");
+	fpsText.setString(ss.str()+" FPS");
 }
 
 void TestLevel::pollEvent(sf::Event e) {
@@ -102,11 +82,15 @@ void TestLevel::pollEvent(sf::Event e) {
 		physicalEntities.push_back(slope);
 	}
 
+	else if(e.type==sf::Event::KeyPressed && e.key.code == sf::Keyboard::E)
+		player->impulseDown();
 }
 
 void TestLevel::render(void) {
 
 	AbstractLevel::render();
+	
+	window.draw(playerInfoText);
 	window.setView(window.getDefaultView());
 	window.draw(fpsText);
 

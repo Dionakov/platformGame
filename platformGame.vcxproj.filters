@@ -10,9 +10,6 @@
     <ClInclude Include="src\Entity\AbstractEntity.hpp">
       <Filter>src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entity\EntityContactListener.hpp">
-      <Filter>src\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="src\Entity\GraphicalEntity.hpp">
       <Filter>src\Entity</Filter>
     </ClInclude>
@@ -43,6 +40,9 @@
     <ClInclude Include="src\Entity\Entities\BasicSlope.hpp">
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="src\Entity\EntityContactListener.hpp">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -53,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp">
       <Filter>src\Entity\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Entity\EntityContactListener.cpp">
-      <Filter>src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Entity\WorldEntity.cpp">
       <Filter>src\Entity</Filter>
@@ -77,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="src\Level\AbstractLevel.cpp">
       <Filter>src\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\EntityContactListener.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -15,6 +15,9 @@ class Square : public WorldEntity {
 	virtual void onBeginContact(b2Contact* contact);
 	virtual void onEndContact(b2Contact* contact);
 	virtual void tick(void);
+	void impulseDown(void);
+
+	std::string getInfo(void) const;
 
 	void jump(void);
 	
@@ -23,9 +26,6 @@ class Square : public WorldEntity {
 	bool contactRight;
 	bool contactBottomRight;
 	bool contactBottomLeft;
-
-	b2Fixture* sq;
-	b2Fixture* circle;
 
 	int numFootContacts;
 };

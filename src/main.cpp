@@ -53,7 +53,7 @@ typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 
 int main() {
 
-	sf::RenderWindow window(sf::VideoMode(1920, 1080, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize | sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 
 	window.setVerticalSyncEnabled(true);
 
