@@ -1,18 +1,6 @@
 /*!
- * \file main.cpp
  * \brief main file
  * \author Roch Dionnet
- */
-
-/* TODO
- * !!! fix erase body bug !!!
- * think about graphical entities having multiple graphicalElements
- * finish code clean up
- * think about a way to integrate levels
- * think about gamestates
- *
- * finish the TrailBullet prototype class
- * more generally, restructurate the code quickly before it goes unsustainable.
  */
 
 #include <iostream>
@@ -33,6 +21,11 @@
 #include "Level/Levels/TestLevel.hpp"
 
 template<typename TNum>
+/*!
+ * \brief Converts a numerical value (int, float...) into an std::string.
+ * \param num The numerical value.
+ * \return The numerical value converted into an std::string.
+ */
 std::string numToStr(TNum num) {
 
 	std::stringstream out;
@@ -40,17 +33,16 @@ std::string numToStr(TNum num) {
 	return out.str();
 }
 
-/*!
- * \fn int main
- * \brief main function
- * 
- * \return EXIT_SUCCESS - The program exited successfully.
- * 
- * TODO write detailled description
- */
 typedef std::vector<PhysicalEntity*> PhysicalEntityList;
 typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 
+/*!
+ * \brief Main function
+ * 
+ * \return EXIT_SUCCESS - The program exited successfully.
+ * 
+ * Entry point of the program. Contains the game loop, instanciates levels...
+ */
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);

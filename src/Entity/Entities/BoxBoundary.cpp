@@ -35,6 +35,4 @@ void BoxBoundary::set(b2Vec2 pos, b2Vec2 size) {
 	s->setOutlineColor(sf::Color(40, 40, 40));
 
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
-
-	this->layer = BACKGROUND;
 }

@@ -1,35 +1,44 @@
+/*!
+ * \brief Contains the GraphicalEntity and GraphicalElement class declarations.
+ * \author Roch Dionnet
+ */
 #ifndef GRAPHICALENTITY_HPP
 #define GRAPHICALENTITY_HPP
 
 #include "AbstractEntity.hpp"
 #include <SFML/Graphics.hpp>
 
+/*!
+ * \brief This class is used to represent an element that is both transformable and drawable.
+ * With polymorphism, it can be used as an SFML Sprite or an SFML Shape.
+ */
 class GraphicalElement : public sf::Drawable, public sf::Transformable {
 };
 
-typedef enum Layer {
-
-	FOREGROUND = 0,
-	BACKGROUND = 10000
-} Layer;
-
 /*!
- * \class GraphicalEntity GraphicalEntity.hpp
  * \brief Represents a game element that can be displayed.
  */
 class GraphicalEntity : public virtual AbstractEntity {
 
 	public:
+	/*!
+	 * \brief Default constructor.
+	 */
 	GraphicalEntity(void) : AbstractEntity() {}
-	virtual ~GraphicalEntity(void) {}
-	GraphicalElement const* getGraphicalElement(void) const { return this->graphicalElement; }
-	bool operator<(GraphicalEntity const& other) const { return this->layer < other.layer; } // TODO test this
 
-	public:
-	Layer layer;
+	/*!
+	 * \brief Virtual destructor.
+	 */
+	virtual ~GraphicalEntity(void) {}
+
+	/*!
+	 * \brief graphicalElement class variable getter.
+	 * \return the graphicalElement class variable.
+	 */
+	GraphicalElement const* getGraphicalElement(void) const { return this->graphicalElement; }
 
 	protected:
-	GraphicalElement* graphicalElement;
+	GraphicalElement* graphicalElement; /*!< A pointer on the graphicalElement that can be displayed */
 };
 
 #endif

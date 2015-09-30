@@ -1,9 +1,16 @@
+/*!
+ * \brief Contains the TestLevel class declaration.
+ * \author Roch Dionnet
+ */
 #ifndef TESTLEVEL_HPP
 #define TESTLEVEL_HPP
 
 #include "../AbstractLevel.hpp"
 #include "../../Entity/Entities/Square.hpp"
 
+/*!
+ * \brief A level used for testing.
+ */
 class TestLevel : public AbstractLevel {
 
 	public:
@@ -15,10 +22,10 @@ class TestLevel : public AbstractLevel {
 	virtual void pollEvent(sf::Event e);
 
 	protected:
-	Square* player; 
-	sf::Text fpsText;
-	sf::Text playerInfoText;
-	sf::Clock fpsClock;
+	Square* player; /*!< The rectangle-shaped player. */ 
+	sf::Text fpsText; /*!< A text which shows the number of FPS. */
+	sf::Text playerInfoText; /*!< A text which shows some info on the player. */
+	sf::Clock fpsClock; /*!< A clock which is reset each frame, used to count the number of FPS. */
 };
 
 #endif
