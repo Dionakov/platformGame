@@ -52,6 +52,9 @@
     <ClInclude Include="src\Entity\Animation\Animator.hpp">
       <Filter>src\Entity\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Entity\Entities\AnimatedSquare.hpp">
+      <Filter>src\Entity\Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="src\Entity\Animation\Animation.cpp">
       <Filter>src\Entity\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Entities\AnimatedSquare.cpp">
+      <Filter>src\Entity\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

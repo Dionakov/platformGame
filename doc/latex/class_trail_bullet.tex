@@ -1,0 +1,107 @@
+\hypertarget{class_trail_bullet}{}\section{Trail\+Bullet Class Reference}
+\label{class_trail_bullet}\index{Trail\+Bullet@{Trail\+Bullet}}
+
+
+{\ttfamily \#include $<$Trail\+Bullet.\+hpp$>$}
+
+Inheritance diagram for Trail\+Bullet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_trail_bullet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_trail_bullet_a4eb109da5dd108d1174a7c1ddb7ca9e1}{Trail\+Bullet} (b2\+World const $\ast$\hyperlink{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{world}, b2\+Body $\ast$\hyperlink{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{body}, b2\+Vec2 pos, bool \hyperlink{class_trail_bullet_a20902ecccf91729dcc6e3e00fba5b420}{direction\+Is\+Right})
+\item 
+virtual void \hyperlink{class_trail_bullet_a3fe11738249bc471194e2eb207730911}{tick} (void)
+\begin{DoxyCompactList}\small\item\em Runs a physical frame of the entity. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_trail_bullet_adc085681d9e19e335c5ec083fc291a5f}{on\+Begin\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Contains what the entity should do when a contact begins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static b2\+Body\+Def \hyperlink{class_trail_bullet_a418bfa9338a78fbe3c8aff5a46cbdbd1}{get\+Body\+Def} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_trail_bullet_a20902ecccf91729dcc6e3e00fba5b420}{direction\+Is\+Right}
+\item 
+float \hyperlink{class_trail_bullet_a5c2df82f2d6910c7366db8d12e3fa8ac}{start\+X}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_trail_bullet_a4eb109da5dd108d1174a7c1ddb7ca9e1}{}\index{Trail\+Bullet@{Trail\+Bullet}!Trail\+Bullet@{Trail\+Bullet}}
+\index{Trail\+Bullet@{Trail\+Bullet}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{Trail\+Bullet(b2\+World const $\ast$world, b2\+Body $\ast$body, b2\+Vec2 pos, bool direction\+Is\+Right)}]{\setlength{\rightskip}{0pt plus 5cm}Trail\+Bullet\+::\+Trail\+Bullet (
+\begin{DoxyParamCaption}
+\item[{b2\+World const $\ast$}]{world, }
+\item[{b2\+Body $\ast$}]{body, }
+\item[{b2\+Vec2}]{pos, }
+\item[{bool}]{direction\+Is\+Right}
+\end{DoxyParamCaption}
+)}\label{class_trail_bullet_a4eb109da5dd108d1174a7c1ddb7ca9e1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_trail_bullet_a418bfa9338a78fbe3c8aff5a46cbdbd1}{}\index{Trail\+Bullet@{Trail\+Bullet}!get\+Body\+Def@{get\+Body\+Def}}
+\index{get\+Body\+Def@{get\+Body\+Def}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{get\+Body\+Def(void)}]{\setlength{\rightskip}{0pt plus 5cm}b2\+Body\+Def Trail\+Bullet\+::get\+Body\+Def (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_trail_bullet_a418bfa9338a78fbe3c8aff5a46cbdbd1}
+\hypertarget{class_trail_bullet_adc085681d9e19e335c5ec083fc291a5f}{}\index{Trail\+Bullet@{Trail\+Bullet}!on\+Begin\+Contact@{on\+Begin\+Contact}}
+\index{on\+Begin\+Contact@{on\+Begin\+Contact}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{on\+Begin\+Contact(b2\+Contact $\ast$contact)}]{\setlength{\rightskip}{0pt plus 5cm}void Trail\+Bullet\+::on\+Begin\+Contact (
+\begin{DoxyParamCaption}
+\item[{b2\+Contact $\ast$}]{contact}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_trail_bullet_adc085681d9e19e335c5ec083fc291a5f}
+
+
+Contains what the entity should do when a contact begins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & The contact information. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_physical_entity_a61e9f273e51f5855ca0bf7bb842c738d}{Physical\+Entity}.
+
+\hypertarget{class_trail_bullet_a3fe11738249bc471194e2eb207730911}{}\index{Trail\+Bullet@{Trail\+Bullet}!tick@{tick}}
+\index{tick@{tick}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{tick(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Trail\+Bullet\+::tick (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_trail_bullet_a3fe11738249bc471194e2eb207730911}
+
+
+Runs a physical frame of the entity. 
+
+
+
+Implements \hyperlink{class_abstract_entity_ac5602c7978aa4eaff46aa206f06046d7}{Abstract\+Entity}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_trail_bullet_a20902ecccf91729dcc6e3e00fba5b420}{}\index{Trail\+Bullet@{Trail\+Bullet}!direction\+Is\+Right@{direction\+Is\+Right}}
+\index{direction\+Is\+Right@{direction\+Is\+Right}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{direction\+Is\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Trail\+Bullet\+::direction\+Is\+Right\hspace{0.3cm}{\ttfamily [protected]}}\label{class_trail_bullet_a20902ecccf91729dcc6e3e00fba5b420}
+\hypertarget{class_trail_bullet_a5c2df82f2d6910c7366db8d12e3fa8ac}{}\index{Trail\+Bullet@{Trail\+Bullet}!start\+X@{start\+X}}
+\index{start\+X@{start\+X}!Trail\+Bullet@{Trail\+Bullet}}
+\subsubsection[{start\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Trail\+Bullet\+::start\+X\hspace{0.3cm}{\ttfamily [protected]}}\label{class_trail_bullet_a5c2df82f2d6910c7366db8d12e3fa8ac}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Entity/\+Entities/\hyperlink{_trail_bullet_8hpp}{Trail\+Bullet.\+hpp}\item 
+Entity/\+Entities/\hyperlink{_trail_bullet_8cpp}{Trail\+Bullet.\+cpp}\end{DoxyCompactItemize}

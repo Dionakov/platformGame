@@ -1,0 +1,139 @@
+\hypertarget{class_physical_entity}{}\section{Physical\+Entity Class Reference}
+\label{class_physical_entity}\index{Physical\+Entity@{Physical\+Entity}}
+
+
+Contains the \hyperlink{class_physical_entity}{Physical\+Entity} class declaration.  
+
+
+
+
+{\ttfamily \#include $<$Physical\+Entity.\+hpp$>$}
+
+Inheritance diagram for Physical\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.771044cm]{class_physical_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_physical_entity_a7e10473f085a0032f0d9c6b17641c777}{Physical\+Entity} (b2\+World const $\ast$\hyperlink{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{world}, b2\+Body $\ast$\hyperlink{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{body})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+b2\+Body $\ast$ \hyperlink{class_physical_entity_aaf3369e0c6147c0280a3abca28a75e96}{get\+Body} (void) const 
+\begin{DoxyCompactList}\small\item\em body member variable getter. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_physical_entity_a61e9f273e51f5855ca0bf7bb842c738d}{on\+Begin\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Contains what the entity should do when a contact begins. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_physical_entity_ae2a98ad512ba0169dcca7bb5b4223306}{on\+End\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Contains what the entity shoukd do when a contact ends. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body $\ast$ \hyperlink{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{body}
+\item 
+b2\+World const $\ast$ \hyperlink{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{world}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the \hyperlink{class_physical_entity}{Physical\+Entity} class declaration. 
+
+\begin{DoxyAuthor}{Author}
+Roch Dionnet
+\end{DoxyAuthor}
+Represents a game element, physics-\/wise. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_physical_entity_a7e10473f085a0032f0d9c6b17641c777}{}\index{Physical\+Entity@{Physical\+Entity}!Physical\+Entity@{Physical\+Entity}}
+\index{Physical\+Entity@{Physical\+Entity}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{Physical\+Entity(b2\+World const $\ast$world, b2\+Body $\ast$body)}]{\setlength{\rightskip}{0pt plus 5cm}Physical\+Entity\+::\+Physical\+Entity (
+\begin{DoxyParamCaption}
+\item[{b2\+World const $\ast$}]{world, }
+\item[{b2\+Body $\ast$}]{body}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_physical_entity_a7e10473f085a0032f0d9c6b17641c777}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & \\
+\hline
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{Physical\+Entity\+::world}, \hyperlink{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{Physical\+Entity\+::body} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_physical_entity_aaf3369e0c6147c0280a3abca28a75e96}{}\index{Physical\+Entity@{Physical\+Entity}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{get\+Body(void) const }]{\setlength{\rightskip}{0pt plus 5cm}b2\+Body$\ast$ Physical\+Entity\+::get\+Body (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_physical_entity_aaf3369e0c6147c0280a3abca28a75e96}
+
+
+body member variable getter. 
+
+\begin{DoxyReturn}{Returns}
+The body member variable. 
+\end{DoxyReturn}
+\hypertarget{class_physical_entity_a61e9f273e51f5855ca0bf7bb842c738d}{}\index{Physical\+Entity@{Physical\+Entity}!on\+Begin\+Contact@{on\+Begin\+Contact}}
+\index{on\+Begin\+Contact@{on\+Begin\+Contact}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{on\+Begin\+Contact(b2\+Contact $\ast$contact)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Physical\+Entity\+::on\+Begin\+Contact (
+\begin{DoxyParamCaption}
+\item[{b2\+Contact $\ast$}]{contact}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_physical_entity_a61e9f273e51f5855ca0bf7bb842c738d}
+
+
+Contains what the entity should do when a contact begins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & The contact information. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_square_a64094ed22922bb6f98271dbd26be408b}{Square}, and \hyperlink{class_trail_bullet_adc085681d9e19e335c5ec083fc291a5f}{Trail\+Bullet}.
+
+\hypertarget{class_physical_entity_ae2a98ad512ba0169dcca7bb5b4223306}{}\index{Physical\+Entity@{Physical\+Entity}!on\+End\+Contact@{on\+End\+Contact}}
+\index{on\+End\+Contact@{on\+End\+Contact}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{on\+End\+Contact(b2\+Contact $\ast$contact)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Physical\+Entity\+::on\+End\+Contact (
+\begin{DoxyParamCaption}
+\item[{b2\+Contact $\ast$}]{contact}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_physical_entity_ae2a98ad512ba0169dcca7bb5b4223306}
+
+
+Contains what the entity shoukd do when a contact ends. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & The contact information. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_square_a42f034da822a46094e943f1b617b727e}{Square}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{}\index{Physical\+Entity@{Physical\+Entity}!body@{body}}
+\index{body@{body}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{body}]{\setlength{\rightskip}{0pt plus 5cm}b2\+Body$\ast$ Physical\+Entity\+::body\hspace{0.3cm}{\ttfamily [protected]}}\label{class_physical_entity_a91a5016393dd890c490b329abd938ec7}
+The physical body registered in world. \hypertarget{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{}\index{Physical\+Entity@{Physical\+Entity}!world@{world}}
+\index{world@{world}!Physical\+Entity@{Physical\+Entity}}
+\subsubsection[{world}]{\setlength{\rightskip}{0pt plus 5cm}b2\+World const$\ast$ Physical\+Entity\+::world\hspace{0.3cm}{\ttfamily [protected]}}\label{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}
+The world that the physical body will interact with. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Entity/\hyperlink{_physical_entity_8hpp}{Physical\+Entity.\+hpp}\end{DoxyCompactItemize}

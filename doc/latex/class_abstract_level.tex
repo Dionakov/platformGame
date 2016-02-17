@@ -1,0 +1,178 @@
+\hypertarget{class_abstract_level}{}\section{Abstract\+Level Class Reference}
+\label{class_abstract_level}\index{Abstract\+Level@{Abstract\+Level}}
+
+
+Represents a basic linear level, with an end condition.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Level.\+hpp$>$}
+
+Inheritance diagram for Abstract\+Level\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstract_level}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_abstract_level_a1557b99aa039a0fd5ceb7120306384a1}{Abstract\+Level} (b2\+World \&\hyperlink{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}{world}, sf\+::\+Render\+Window \&\hyperlink{class_abstract_level_a3332e1be17da924be26064ac4e089721}{window})
+\begin{DoxyCompactList}\small\item\em Class Constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_abstract_level_aaac7519d2d31d8db995585dec4f5aec0}{initialize} (void)=0
+\begin{DoxyCompactList}\small\item\em Initializes the level. Creates the entities and put them in the entity lists, among other things. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_abstract_level_ac50b3069600e90000f2f62dccb522154}{tick} (void)=0
+\begin{DoxyCompactList}\small\item\em Game tick. Runs a physical frame of the level. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_abstract_level_aa64f9c76abab71339dc07643472f13ee}{render} (void)
+\begin{DoxyCompactList}\small\item\em Render method. Renders the level on screen. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_abstract_level_a1dbffd34c5ebd93ff833aa6a23047546}{is\+Finished} (void)=0
+\begin{DoxyCompactList}\small\item\em Tells whether or not the level is finished. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_abstract_level_aa6b84b35f24206c43bb7cc0af1f9dfb5}{poll\+Event} (sf\+::\+Event e)
+\begin{DoxyCompactList}\small\item\em Handles an event caught by the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_abstract_level_8hpp_a33f40c5b921668406bc9359321c92e00}{Graphical\+Entity\+List} \hyperlink{class_abstract_level_ad08468cc591dab58bbde1dc3ce8ef63d}{graphical\+Entities}
+\item 
+\hyperlink{_abstract_level_8hpp_a2f8ec60783d4f4d3911b30a32c604d3e}{Physical\+Entity\+List} \hyperlink{class_abstract_level_a3591b89683af2216ef9e958d6e35f863}{physical\+Entities}
+\item 
+b2\+World \& \hyperlink{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}{world}
+\item 
+sf\+::\+Render\+Window \& \hyperlink{class_abstract_level_a3332e1be17da924be26064ac4e089721}{window}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a basic linear level, with an end condition. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_abstract_level_a1557b99aa039a0fd5ceb7120306384a1}{}\index{Abstract\+Level@{Abstract\+Level}!Abstract\+Level@{Abstract\+Level}}
+\index{Abstract\+Level@{Abstract\+Level}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{Abstract\+Level(b2\+World \&world, sf\+::\+Render\+Window \&window)}]{\setlength{\rightskip}{0pt plus 5cm}Abstract\+Level\+::\+Abstract\+Level (
+\begin{DoxyParamCaption}
+\item[{b2\+World \&}]{world, }
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_abstract_level_a1557b99aa039a0fd5ceb7120306384a1}
+
+
+Class Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}{Abstract\+Level\+::world}, \hyperlink{class_abstract_level_a3332e1be17da924be26064ac4e089721}{Abstract\+Level\+::window} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_abstract_level_aaac7519d2d31d8db995585dec4f5aec0}{}\index{Abstract\+Level@{Abstract\+Level}!initialize@{initialize}}
+\index{initialize@{initialize}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{initialize(void)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\+Level\+::initialize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_abstract_level_aaac7519d2d31d8db995585dec4f5aec0}
+
+
+Initializes the level. Creates the entities and put them in the entity lists, among other things. 
+
+
+
+Implemented in \hyperlink{class_test_level_a4be8aacf1a305c58b7670de20d6f4303}{Test\+Level}.
+
+\hypertarget{class_abstract_level_a1dbffd34c5ebd93ff833aa6a23047546}{}\index{Abstract\+Level@{Abstract\+Level}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{is\+Finished(void)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Abstract\+Level\+::is\+Finished (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_abstract_level_a1dbffd34c5ebd93ff833aa6a23047546}
+
+
+Tells whether or not the level is finished. 
+
+\begin{DoxyReturn}{Returns}
+true if the level\textquotesingle{}s end condition is met, else returns false. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_level_a2644a0797dc2224ff9088a4c87e71b2b}{Test\+Level}.
+
+\hypertarget{class_abstract_level_aa6b84b35f24206c43bb7cc0af1f9dfb5}{}\index{Abstract\+Level@{Abstract\+Level}!poll\+Event@{poll\+Event}}
+\index{poll\+Event@{poll\+Event}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{poll\+Event(sf\+::\+Event e)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\+Level\+::poll\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_abstract_level_aa6b84b35f24206c43bb7cc0af1f9dfb5}
+
+
+Handles an event caught by the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The event to handle. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_test_level_a4f16d4600d4b2aeb9299af3417977539}{Test\+Level}.
+
+\hypertarget{class_abstract_level_aa64f9c76abab71339dc07643472f13ee}{}\index{Abstract\+Level@{Abstract\+Level}!render@{render}}
+\index{render@{render}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{render(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Abstract\+Level\+::render (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_abstract_level_aa64f9c76abab71339dc07643472f13ee}
+
+
+Render method. Renders the level on screen. 
+
+
+
+Reimplemented in \hyperlink{class_test_level_a840787cff2a1941a5ce4fafe31433094}{Test\+Level}.
+
+\hypertarget{class_abstract_level_ac50b3069600e90000f2f62dccb522154}{}\index{Abstract\+Level@{Abstract\+Level}!tick@{tick}}
+\index{tick@{tick}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{tick(void)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\+Level\+::tick (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_abstract_level_ac50b3069600e90000f2f62dccb522154}
+
+
+Game tick. Runs a physical frame of the level. 
+
+
+
+Implemented in \hyperlink{class_test_level_a299cc2d19d10678e932bf2df65fe9902}{Test\+Level}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_abstract_level_ad08468cc591dab58bbde1dc3ce8ef63d}{}\index{Abstract\+Level@{Abstract\+Level}!graphical\+Entities@{graphical\+Entities}}
+\index{graphical\+Entities@{graphical\+Entities}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{graphical\+Entities}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graphical\+Entity\+List} Abstract\+Level\+::graphical\+Entities\hspace{0.3cm}{\ttfamily [protected]}}\label{class_abstract_level_ad08468cc591dab58bbde1dc3ce8ef63d}
+Vector of graphical entities. \hypertarget{class_abstract_level_a3591b89683af2216ef9e958d6e35f863}{}\index{Abstract\+Level@{Abstract\+Level}!physical\+Entities@{physical\+Entities}}
+\index{physical\+Entities@{physical\+Entities}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{physical\+Entities}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Physical\+Entity\+List} Abstract\+Level\+::physical\+Entities\hspace{0.3cm}{\ttfamily [protected]}}\label{class_abstract_level_a3591b89683af2216ef9e958d6e35f863}
+Vector of physical entities. \hypertarget{class_abstract_level_a3332e1be17da924be26064ac4e089721}{}\index{Abstract\+Level@{Abstract\+Level}!window@{window}}
+\index{window@{window}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{window}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Window\& Abstract\+Level\+::window\hspace{0.3cm}{\ttfamily [protected]}}\label{class_abstract_level_a3332e1be17da924be26064ac4e089721}
+The window that the level is rendered on. \hypertarget{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}{}\index{Abstract\+Level@{Abstract\+Level}!world@{world}}
+\index{world@{world}!Abstract\+Level@{Abstract\+Level}}
+\subsubsection[{world}]{\setlength{\rightskip}{0pt plus 5cm}b2\+World\& Abstract\+Level\+::world\hspace{0.3cm}{\ttfamily [protected]}}\label{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}
+The physical world that the level takes place in. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Level/\hyperlink{_abstract_level_8hpp}{Abstract\+Level.\+hpp}\item 
+Level/\hyperlink{_abstract_level_8cpp}{Abstract\+Level.\+cpp}\end{DoxyCompactItemize}

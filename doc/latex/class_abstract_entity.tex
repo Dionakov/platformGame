@@ -1,0 +1,112 @@
+\hypertarget{class_abstract_entity}{}\section{Abstract\+Entity Class Reference}
+\label{class_abstract_entity}\index{Abstract\+Entity@{Abstract\+Entity}}
+
+
+Contains the \hyperlink{class_abstract_entity}{Abstract\+Entity} class declaration.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Entity.\+hpp$>$}
+
+Inheritance diagram for Abstract\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_abstract_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_abstract_entity_a4df93a42a764660b849deb5e18efff5e}{Abstract\+Entity} (void)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_abstract_entity_ac5602c7978aa4eaff46aa206f06046d7}{tick} (void)=0
+\begin{DoxyCompactList}\small\item\em Runs a physical frame of the entity. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_abstract_entity_ab5efb435d782e095168ce6199fe2508a}{$\sim$\+Abstract\+Entity} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_abstract_entity_a6fa6c7e34a763083ddf813c5f069e400}{is\+Dead} (void) const 
+\begin{DoxyCompactList}\small\item\em dead member variable getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_abstract_entity_acb290d7867b8b032c2535632d270584a}{dead}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the \hyperlink{class_abstract_entity}{Abstract\+Entity} class declaration. 
+
+\begin{DoxyAuthor}{Author}
+Roch Dionnet
+\end{DoxyAuthor}
+Base class for game entities. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_abstract_entity_a4df93a42a764660b849deb5e18efff5e}{}\index{Abstract\+Entity@{Abstract\+Entity}!Abstract\+Entity@{Abstract\+Entity}}
+\index{Abstract\+Entity@{Abstract\+Entity}!Abstract\+Entity@{Abstract\+Entity}}
+\subsubsection[{Abstract\+Entity(void)}]{\setlength{\rightskip}{0pt plus 5cm}Abstract\+Entity\+::\+Abstract\+Entity (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_abstract_entity_a4df93a42a764660b849deb5e18efff5e}
+
+
+Default constructor. 
+
+\hypertarget{class_abstract_entity_ab5efb435d782e095168ce6199fe2508a}{}\index{Abstract\+Entity@{Abstract\+Entity}!````~Abstract\+Entity@{$\sim$\+Abstract\+Entity}}
+\index{````~Abstract\+Entity@{$\sim$\+Abstract\+Entity}!Abstract\+Entity@{Abstract\+Entity}}
+\subsubsection[{$\sim$\+Abstract\+Entity(void)}]{\setlength{\rightskip}{0pt plus 5cm}virtual Abstract\+Entity\+::$\sim$\+Abstract\+Entity (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_abstract_entity_ab5efb435d782e095168ce6199fe2508a}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_abstract_entity_a6fa6c7e34a763083ddf813c5f069e400}{}\index{Abstract\+Entity@{Abstract\+Entity}!is\+Dead@{is\+Dead}}
+\index{is\+Dead@{is\+Dead}!Abstract\+Entity@{Abstract\+Entity}}
+\subsubsection[{is\+Dead(void) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Abstract\+Entity\+::is\+Dead (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_abstract_entity_a6fa6c7e34a763083ddf813c5f069e400}
+
+
+dead member variable getter. 
+
+\begin{DoxyReturn}{Returns}
+dead member variable. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_abstract_entity_acb290d7867b8b032c2535632d270584a}{dead} 
+\end{DoxySeeAlso}
+\hypertarget{class_abstract_entity_ac5602c7978aa4eaff46aa206f06046d7}{}\index{Abstract\+Entity@{Abstract\+Entity}!tick@{tick}}
+\index{tick@{tick}!Abstract\+Entity@{Abstract\+Entity}}
+\subsubsection[{tick(void)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\+Entity\+::tick (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_abstract_entity_ac5602c7978aa4eaff46aa206f06046d7}
+
+
+Runs a physical frame of the entity. 
+
+
+
+Implemented in \hyperlink{class_box_boundary_a5f174130498e1cfeb16bd37dfa8bceba}{Box\+Boundary}, \hyperlink{class_square_afb90e037b269f878406d52bee92e7290}{Square}, \hyperlink{class_basic_platform_a4f48429408329c4b0bb8924e410ad44e}{Basic\+Platform}, \hyperlink{class_circle_a352287304dc72826b75108e7333dc6d1}{Circle}, \hyperlink{class_trail_bullet_a3fe11738249bc471194e2eb207730911}{Trail\+Bullet}, and \hyperlink{class_basic_slope_a61be54e264d4dba781efa7d611634aed}{Basic\+Slope}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_abstract_entity_acb290d7867b8b032c2535632d270584a}{}\index{Abstract\+Entity@{Abstract\+Entity}!dead@{dead}}
+\index{dead@{dead}!Abstract\+Entity@{Abstract\+Entity}}
+\subsubsection[{dead}]{\setlength{\rightskip}{0pt plus 5cm}bool Abstract\+Entity\+::dead\hspace{0.3cm}{\ttfamily [protected]}}\label{class_abstract_entity_acb290d7867b8b032c2535632d270584a}
+Tells whether or not the entity is considered as dead. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Entity/\hyperlink{_abstract_entity_8hpp}{Abstract\+Entity.\+hpp}\end{DoxyCompactItemize}

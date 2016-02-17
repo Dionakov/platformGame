@@ -4,6 +4,7 @@
 #include "../../Entity/Entities/BasicPlatform.hpp"
 #include "../../Entity/Entities/BasicSlope.hpp"
 #include "../../Entity/Entities/Square.hpp"
+#include "../../Entity/Entities/AnimatedSquare.hpp"
 #include "../../Entity/Entities/BoxBoundary.hpp"
 #include "../../constants.hpp"
 #include "../../sfmlToBox2D.hpp"
@@ -12,7 +13,6 @@
 TestLevel::TestLevel(b2World& world, sf::RenderWindow& window) : AbstractLevel(world, window) {
 
 	world.SetContactListener(new EntityContactListener);
-
 }
 
 void TestLevel::initialize(void) {
@@ -24,7 +24,7 @@ void TestLevel::initialize(void) {
 	physicalEntities.clear();
 	graphicalEntities.clear();
 
-	player = new Square(&world, world.CreateBody(&Square::getBodyDef()));
+	player = new AnimatedSquare(&world, world.CreateBody(&AnimatedSquare::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
 

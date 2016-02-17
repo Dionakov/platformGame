@@ -1,0 +1,169 @@
+\hypertarget{class_test_level}{}\section{Test\+Level Class Reference}
+\label{class_test_level}\index{Test\+Level@{Test\+Level}}
+
+
+Contains the \hyperlink{class_test_level}{Test\+Level} class declaration.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Level.\+hpp$>$}
+
+Inheritance diagram for Test\+Level\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_test_level}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_test_level_a5f5e91dab534ad6e17ca716f11c7274a}{Test\+Level} (b2\+World \&\hyperlink{class_abstract_level_a566499434bbd056afd9e12b971e8a41e}{world}, sf\+::\+Render\+Window \&\hyperlink{class_abstract_level_a3332e1be17da924be26064ac4e089721}{window})
+\item 
+virtual void \hyperlink{class_test_level_a4be8aacf1a305c58b7670de20d6f4303}{initialize} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the level. Creates the entities and put them in the entity lists, among other things. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_test_level_a299cc2d19d10678e932bf2df65fe9902}{tick} (void)
+\begin{DoxyCompactList}\small\item\em Game tick. Runs a physical frame of the level. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_test_level_a840787cff2a1941a5ce4fafe31433094}{render} (void)
+\begin{DoxyCompactList}\small\item\em Render method. Renders the level on screen. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_test_level_a2644a0797dc2224ff9088a4c87e71b2b}{is\+Finished} (void)
+\begin{DoxyCompactList}\small\item\em Tells whether or not the level is finished. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_test_level_a4f16d4600d4b2aeb9299af3417977539}{poll\+Event} (sf\+::\+Event e)
+\begin{DoxyCompactList}\small\item\em Handles an event caught by the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square}{Square} $\ast$ \hyperlink{class_test_level_a122398737974e85c0c652cc8b07b74b8}{player}
+\item 
+sf\+::\+Text \hyperlink{class_test_level_a230d13d6ab7b2b95c971a49e732710ca}{fps\+Text}
+\item 
+sf\+::\+Text \hyperlink{class_test_level_a55f3d8b00469758c027c4788357fe535}{player\+Info\+Text}
+\item 
+sf\+::\+Clock \hyperlink{class_test_level_a856b65cd7d74f6f283dc467e9ed954df}{fps\+Clock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the \hyperlink{class_test_level}{Test\+Level} class declaration. 
+
+\begin{DoxyAuthor}{Author}
+Roch Dionnet
+\end{DoxyAuthor}
+A level used for testing. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_test_level_a5f5e91dab534ad6e17ca716f11c7274a}{}\index{Test\+Level@{Test\+Level}!Test\+Level@{Test\+Level}}
+\index{Test\+Level@{Test\+Level}!Test\+Level@{Test\+Level}}
+\subsubsection[{Test\+Level(b2\+World \&world, sf\+::\+Render\+Window \&window)}]{\setlength{\rightskip}{0pt plus 5cm}Test\+Level\+::\+Test\+Level (
+\begin{DoxyParamCaption}
+\item[{b2\+World \&}]{world, }
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}\label{class_test_level_a5f5e91dab534ad6e17ca716f11c7274a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_test_level_a4be8aacf1a305c58b7670de20d6f4303}{}\index{Test\+Level@{Test\+Level}!initialize@{initialize}}
+\index{initialize@{initialize}!Test\+Level@{Test\+Level}}
+\subsubsection[{initialize(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Test\+Level\+::initialize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_test_level_a4be8aacf1a305c58b7670de20d6f4303}
+
+
+Initializes the level. Creates the entities and put them in the entity lists, among other things. 
+
+
+
+Implements \hyperlink{class_abstract_level_aaac7519d2d31d8db995585dec4f5aec0}{Abstract\+Level}.
+
+\hypertarget{class_test_level_a2644a0797dc2224ff9088a4c87e71b2b}{}\index{Test\+Level@{Test\+Level}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Test\+Level@{Test\+Level}}
+\subsubsection[{is\+Finished(void)}]{\setlength{\rightskip}{0pt plus 5cm}bool Test\+Level\+::is\+Finished (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_test_level_a2644a0797dc2224ff9088a4c87e71b2b}
+
+
+Tells whether or not the level is finished. 
+
+\begin{DoxyReturn}{Returns}
+true if the level\textquotesingle{}s end condition is met, else returns false. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_abstract_level_a1dbffd34c5ebd93ff833aa6a23047546}{Abstract\+Level}.
+
+\hypertarget{class_test_level_a4f16d4600d4b2aeb9299af3417977539}{}\index{Test\+Level@{Test\+Level}!poll\+Event@{poll\+Event}}
+\index{poll\+Event@{poll\+Event}!Test\+Level@{Test\+Level}}
+\subsubsection[{poll\+Event(sf\+::\+Event e)}]{\setlength{\rightskip}{0pt plus 5cm}void Test\+Level\+::poll\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_test_level_a4f16d4600d4b2aeb9299af3417977539}
+
+
+Handles an event caught by the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The event to handle. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_abstract_level_aa6b84b35f24206c43bb7cc0af1f9dfb5}{Abstract\+Level}.
+
+\hypertarget{class_test_level_a840787cff2a1941a5ce4fafe31433094}{}\index{Test\+Level@{Test\+Level}!render@{render}}
+\index{render@{render}!Test\+Level@{Test\+Level}}
+\subsubsection[{render(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Test\+Level\+::render (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_test_level_a840787cff2a1941a5ce4fafe31433094}
+
+
+Render method. Renders the level on screen. 
+
+
+
+Reimplemented from \hyperlink{class_abstract_level_aa64f9c76abab71339dc07643472f13ee}{Abstract\+Level}.
+
+\hypertarget{class_test_level_a299cc2d19d10678e932bf2df65fe9902}{}\index{Test\+Level@{Test\+Level}!tick@{tick}}
+\index{tick@{tick}!Test\+Level@{Test\+Level}}
+\subsubsection[{tick(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Test\+Level\+::tick (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_test_level_a299cc2d19d10678e932bf2df65fe9902}
+
+
+Game tick. Runs a physical frame of the level. 
+
+
+
+Implements \hyperlink{class_abstract_level_ac50b3069600e90000f2f62dccb522154}{Abstract\+Level}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_test_level_a856b65cd7d74f6f283dc467e9ed954df}{}\index{Test\+Level@{Test\+Level}!fps\+Clock@{fps\+Clock}}
+\index{fps\+Clock@{fps\+Clock}!Test\+Level@{Test\+Level}}
+\subsubsection[{fps\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Clock Test\+Level\+::fps\+Clock\hspace{0.3cm}{\ttfamily [protected]}}\label{class_test_level_a856b65cd7d74f6f283dc467e9ed954df}
+A clock which is reset each frame, used to count the number of F\+P\+S. \hypertarget{class_test_level_a230d13d6ab7b2b95c971a49e732710ca}{}\index{Test\+Level@{Test\+Level}!fps\+Text@{fps\+Text}}
+\index{fps\+Text@{fps\+Text}!Test\+Level@{Test\+Level}}
+\subsubsection[{fps\+Text}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Text Test\+Level\+::fps\+Text\hspace{0.3cm}{\ttfamily [protected]}}\label{class_test_level_a230d13d6ab7b2b95c971a49e732710ca}
+A text which shows the number of F\+P\+S. \hypertarget{class_test_level_a122398737974e85c0c652cc8b07b74b8}{}\index{Test\+Level@{Test\+Level}!player@{player}}
+\index{player@{player}!Test\+Level@{Test\+Level}}
+\subsubsection[{player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square}$\ast$ Test\+Level\+::player\hspace{0.3cm}{\ttfamily [protected]}}\label{class_test_level_a122398737974e85c0c652cc8b07b74b8}
+The rectangle-\/shaped player. \hypertarget{class_test_level_a55f3d8b00469758c027c4788357fe535}{}\index{Test\+Level@{Test\+Level}!player\+Info\+Text@{player\+Info\+Text}}
+\index{player\+Info\+Text@{player\+Info\+Text}!Test\+Level@{Test\+Level}}
+\subsubsection[{player\+Info\+Text}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Text Test\+Level\+::player\+Info\+Text\hspace{0.3cm}{\ttfamily [protected]}}\label{class_test_level_a55f3d8b00469758c027c4788357fe535}
+A text which shows some info on the player. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Level/\+Levels/\hyperlink{_test_level_8hpp}{Test\+Level.\+hpp}\item 
+Level/\+Levels/\hyperlink{_test_level_8cpp}{Test\+Level.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$Box2\+D/\+Box2\+D.\+h$>$}\\*
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}Entity/\+World\+Entity.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Entity/\+Entity\+Contact\+Listener.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Entity/\+Entities/\+Square.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Entity/\+Entities/\+Basic\+Platform.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Entity/\+Entities/\+Box\+Boundary.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Entity/\+Entities/\+Trail\+Bullet.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}constants.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sfml\+To\+Box2\+D.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Level/\+Abstract\+Level.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Level/\+Levels/\+Test\+Level.\+hpp\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \hyperlink{class_physical_entity}{Physical\+Entity} $\ast$ $>$ \hyperlink{main_8cpp_a2f8ec60783d4f4d3911b30a32c604d3e}{Physical\+Entity\+List}
+\item 
+typedef std\+::vector$<$ \hyperlink{class_graphical_entity}{Graphical\+Entity} $\ast$ $>$ \hyperlink{main_8cpp_a33f40c5b921668406bc9359321c92e00}{Graphical\+Entity\+List}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T\+Num $>$ }\\std\+::string \hyperlink{main_8cpp_a76bcff87353bed53d79858061c3e127f}{num\+To\+Str} (T\+Num num)
+\begin{DoxyCompactList}\small\item\em main file \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{main_8cpp_a33f40c5b921668406bc9359321c92e00}{}\index{main.\+cpp@{main.\+cpp}!Graphical\+Entity\+List@{Graphical\+Entity\+List}}
+\index{Graphical\+Entity\+List@{Graphical\+Entity\+List}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{Graphical\+Entity\+List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Graphical\+Entity}$\ast$$>$ {\bf Graphical\+Entity\+List}}\label{main_8cpp_a33f40c5b921668406bc9359321c92e00}
+\hypertarget{main_8cpp_a2f8ec60783d4f4d3911b30a32c604d3e}{}\index{main.\+cpp@{main.\+cpp}!Physical\+Entity\+List@{Physical\+Entity\+List}}
+\index{Physical\+Entity\+List@{Physical\+Entity\+List}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{Physical\+Entity\+List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Physical\+Entity}$\ast$$>$ {\bf Physical\+Entity\+List}}\label{main_8cpp_a2f8ec60783d4f4d3911b30a32c604d3e}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+S\+S -\/ The program exited successfully.
+\end{DoxyReturn}
+Entry point of the program. Contains the game loop, instanciates levels... \hypertarget{main_8cpp_a76bcff87353bed53d79858061c3e127f}{}\index{main.\+cpp@{main.\+cpp}!num\+To\+Str@{num\+To\+Str}}
+\index{num\+To\+Str@{num\+To\+Str}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{num\+To\+Str(\+T\+Num num)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T\+Num $>$ std\+::string num\+To\+Str (
+\begin{DoxyParamCaption}
+\item[{T\+Num}]{num}
+\end{DoxyParamCaption}
+)}\label{main_8cpp_a76bcff87353bed53d79858061c3e127f}
+
+
+main file 
+
+\begin{DoxyAuthor}{Author}
+Roch Dionnet
+\end{DoxyAuthor}
+Converts a numerical value (int, float...) into an std\+::string. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The numerical value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The numerical value converted into an std\+::string. 
+\end{DoxyReturn}

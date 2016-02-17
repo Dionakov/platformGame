@@ -1,0 +1,169 @@
+\hypertarget{class_square}{}\section{Square Class Reference}
+\label{class_square}\index{Square@{Square}}
+
+
+{\ttfamily \#include $<$Square.\+hpp$>$}
+
+Inheritance diagram for Square\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_square}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square_a3c81cb469cb4f7c496617ba020c35582}{Square} (b2\+World const $\ast$\hyperlink{class_physical_entity_ae6c23c3817c4d7f9a867abed05cd7834}{world}, b2\+Body $\ast$\hyperlink{class_physical_entity_a91a5016393dd890c490b329abd938ec7}{body})
+\item 
+virtual void \hyperlink{class_square_a64094ed22922bb6f98271dbd26be408b}{on\+Begin\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Contains what the entity should do when a contact begins. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_square_a42f034da822a46094e943f1b617b727e}{on\+End\+Contact} (b2\+Contact $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Contains what the entity shoukd do when a contact ends. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_square_afb90e037b269f878406d52bee92e7290}{tick} (void)
+\begin{DoxyCompactList}\small\item\em Runs a physical frame of the entity. \end{DoxyCompactList}\item 
+void \hyperlink{class_square_ac7b9e76c633bbb107f0af3e48ffa90f8}{impulse\+Down} (void)
+\item 
+std\+::string \hyperlink{class_square_ae58ee8ae5092447d175966a617bc70ec}{get\+Info} (void) const 
+\item 
+void \hyperlink{class_square_a0166e843739e678f8a286f525b4b5662}{jump} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static b2\+Body\+Def \hyperlink{class_square_a69e35e679ca51e9b1c48e41a53c810db}{get\+Body\+Def} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_square_a353e98336921e4244ed66482262e5773}{contact\+Left}
+\item 
+bool \hyperlink{class_square_ab96608d72e01b3ebffd37bed24b6d070}{contact\+Right}
+\item 
+bool \hyperlink{class_square_a67729d52489abe1b988e4385100ba5cf}{contact\+Bottom\+Right}
+\item 
+bool \hyperlink{class_square_aca8a8366a0056f73f520998f4bf1fbbe}{contact\+Bottom\+Left}
+\item 
+int \hyperlink{class_square_a3c52d1135e840b92f50d5a74f19c7b51}{num\+Foot\+Contacts}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_square_a3c81cb469cb4f7c496617ba020c35582}{}\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square(b2\+World const $\ast$world, b2\+Body $\ast$body)}]{\setlength{\rightskip}{0pt plus 5cm}Square\+::\+Square (
+\begin{DoxyParamCaption}
+\item[{b2\+World const $\ast$}]{world, }
+\item[{b2\+Body $\ast$}]{body}
+\end{DoxyParamCaption}
+)}\label{class_square_a3c81cb469cb4f7c496617ba020c35582}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_square_a69e35e679ca51e9b1c48e41a53c810db}{}\index{Square@{Square}!get\+Body\+Def@{get\+Body\+Def}}
+\index{get\+Body\+Def@{get\+Body\+Def}!Square@{Square}}
+\subsubsection[{get\+Body\+Def(void)}]{\setlength{\rightskip}{0pt plus 5cm}b2\+Body\+Def Square\+::get\+Body\+Def (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_square_a69e35e679ca51e9b1c48e41a53c810db}
+\hypertarget{class_square_ae58ee8ae5092447d175966a617bc70ec}{}\index{Square@{Square}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!Square@{Square}}
+\subsubsection[{get\+Info(void) const }]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Square\+::get\+Info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{class_square_ae58ee8ae5092447d175966a617bc70ec}
+\hypertarget{class_square_ac7b9e76c633bbb107f0af3e48ffa90f8}{}\index{Square@{Square}!impulse\+Down@{impulse\+Down}}
+\index{impulse\+Down@{impulse\+Down}!Square@{Square}}
+\subsubsection[{impulse\+Down(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::impulse\+Down (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_square_ac7b9e76c633bbb107f0af3e48ffa90f8}
+\hypertarget{class_square_a0166e843739e678f8a286f525b4b5662}{}\index{Square@{Square}!jump@{jump}}
+\index{jump@{jump}!Square@{Square}}
+\subsubsection[{jump(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::jump (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_square_a0166e843739e678f8a286f525b4b5662}
+\hypertarget{class_square_a64094ed22922bb6f98271dbd26be408b}{}\index{Square@{Square}!on\+Begin\+Contact@{on\+Begin\+Contact}}
+\index{on\+Begin\+Contact@{on\+Begin\+Contact}!Square@{Square}}
+\subsubsection[{on\+Begin\+Contact(b2\+Contact $\ast$contact)}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::on\+Begin\+Contact (
+\begin{DoxyParamCaption}
+\item[{b2\+Contact $\ast$}]{contact}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_square_a64094ed22922bb6f98271dbd26be408b}
+
+
+Contains what the entity should do when a contact begins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & The contact information. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_physical_entity_a61e9f273e51f5855ca0bf7bb842c738d}{Physical\+Entity}.
+
+\hypertarget{class_square_a42f034da822a46094e943f1b617b727e}{}\index{Square@{Square}!on\+End\+Contact@{on\+End\+Contact}}
+\index{on\+End\+Contact@{on\+End\+Contact}!Square@{Square}}
+\subsubsection[{on\+End\+Contact(b2\+Contact $\ast$contact)}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::on\+End\+Contact (
+\begin{DoxyParamCaption}
+\item[{b2\+Contact $\ast$}]{contact}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_square_a42f034da822a46094e943f1b617b727e}
+
+
+Contains what the entity shoukd do when a contact ends. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & The contact information. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_physical_entity_ae2a98ad512ba0169dcca7bb5b4223306}{Physical\+Entity}.
+
+\hypertarget{class_square_afb90e037b269f878406d52bee92e7290}{}\index{Square@{Square}!tick@{tick}}
+\index{tick@{tick}!Square@{Square}}
+\subsubsection[{tick(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::tick (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_square_afb90e037b269f878406d52bee92e7290}
+
+
+Runs a physical frame of the entity. 
+
+
+
+Implements \hyperlink{class_abstract_entity_ac5602c7978aa4eaff46aa206f06046d7}{Abstract\+Entity}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_square_aca8a8366a0056f73f520998f4bf1fbbe}{}\index{Square@{Square}!contact\+Bottom\+Left@{contact\+Bottom\+Left}}
+\index{contact\+Bottom\+Left@{contact\+Bottom\+Left}!Square@{Square}}
+\subsubsection[{contact\+Bottom\+Left}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\+::contact\+Bottom\+Left\hspace{0.3cm}{\ttfamily [protected]}}\label{class_square_aca8a8366a0056f73f520998f4bf1fbbe}
+\hypertarget{class_square_a67729d52489abe1b988e4385100ba5cf}{}\index{Square@{Square}!contact\+Bottom\+Right@{contact\+Bottom\+Right}}
+\index{contact\+Bottom\+Right@{contact\+Bottom\+Right}!Square@{Square}}
+\subsubsection[{contact\+Bottom\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\+::contact\+Bottom\+Right\hspace{0.3cm}{\ttfamily [protected]}}\label{class_square_a67729d52489abe1b988e4385100ba5cf}
+\hypertarget{class_square_a353e98336921e4244ed66482262e5773}{}\index{Square@{Square}!contact\+Left@{contact\+Left}}
+\index{contact\+Left@{contact\+Left}!Square@{Square}}
+\subsubsection[{contact\+Left}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\+::contact\+Left\hspace{0.3cm}{\ttfamily [protected]}}\label{class_square_a353e98336921e4244ed66482262e5773}
+\hypertarget{class_square_ab96608d72e01b3ebffd37bed24b6d070}{}\index{Square@{Square}!contact\+Right@{contact\+Right}}
+\index{contact\+Right@{contact\+Right}!Square@{Square}}
+\subsubsection[{contact\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\+::contact\+Right\hspace{0.3cm}{\ttfamily [protected]}}\label{class_square_ab96608d72e01b3ebffd37bed24b6d070}
+\hypertarget{class_square_a3c52d1135e840b92f50d5a74f19c7b51}{}\index{Square@{Square}!num\+Foot\+Contacts@{num\+Foot\+Contacts}}
+\index{num\+Foot\+Contacts@{num\+Foot\+Contacts}!Square@{Square}}
+\subsubsection[{num\+Foot\+Contacts}]{\setlength{\rightskip}{0pt plus 5cm}int Square\+::num\+Foot\+Contacts\hspace{0.3cm}{\ttfamily [protected]}}\label{class_square_a3c52d1135e840b92f50d5a74f19c7b51}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Entity/\+Entities/\hyperlink{_square_8hpp}{Square.\+hpp}\item 
+Entity/\+Entities/\hyperlink{_square_8cpp}{Square.\+cpp}\end{DoxyCompactItemize}

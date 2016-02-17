@@ -6,7 +6,7 @@
 #define TESTLEVEL_HPP
 
 #include "../AbstractLevel.hpp"
-#include "../../Entity/Entities/Square.hpp"
+#include "../../Entity/Entities/AnimatedSquare.hpp"
 
 class TestLevel : public AbstractLevel {
 
@@ -19,7 +19,7 @@ class TestLevel : public AbstractLevel {
 	virtual void pollEvent(sf::Event e);
 
 	protected:
-	Square* player; /*!< The rectangle-shaped player. */ 
+	AnimatedSquare* player; /*!< The rectangle-shaped player. */ 
 	sf::Text fpsText; /*!< A text which shows the number of FPS. */
 	sf::Text playerInfoText; /*!< A text which shows some info on the player. */
 	sf::Clock fpsClock; /*!< A clock which is reset each frame, used to count the number of FPS. */

@@ -16,6 +16,7 @@
     <ClInclude Include="src\Entity\Animation\AnimatedSprite.hpp" />
     <ClInclude Include="src\Entity\Animation\Animation.hpp" />
     <ClInclude Include="src\Entity\Animation\Animator.hpp" />
+    <ClInclude Include="src\Entity\Entities\AnimatedSquare.hpp" />
     <ClInclude Include="src\Entity\Entities\BasicPlatform.hpp" />
     <ClInclude Include="src\Entity\Entities\BasicSlope.hpp" />
     <ClInclude Include="src\Entity\Entities\BoxBoundary.hpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="src\Entity\Animation\AnimatedSprite.cpp" />
     <ClCompile Include="src\Entity\Animation\Animation.cpp" />
     <ClCompile Include="src\Entity\Animation\Animator.cpp" />
+    <ClCompile Include="src\Entity\Entities\AnimatedSquare.cpp" />
     <ClCompile Include="src\Entity\Entities\BasicPlatform.cpp" />
     <ClCompile Include="src\Entity\Entities\BasicSlope.cpp" />
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp" />
