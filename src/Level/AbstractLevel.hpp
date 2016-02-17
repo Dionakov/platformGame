@@ -1,5 +1,5 @@
 /*!
- * \brief Contains the AbstractLevel class declaration. 
+ * \brief Represents a basic linear level, with an end condition.
  * \author Roch Dionnet
  */
 #ifndef ABSTRACTLEVEL_HPP
@@ -13,9 +13,6 @@
 typedef std::vector<GraphicalEntity*> GraphicalEntityList;
 typedef std::vector<PhysicalEntity*> PhysicalEntityList;
 
-/*!
- * \brief Represents a basic linear level, with an end condition.
- */
 class AbstractLevel {
 
 	public:

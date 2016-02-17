@@ -1,5 +1,5 @@
 /*!
- * \brief Contains the EntityContactListener class declaration.
+ * \brief A contact listener for entities.
  * \author Roch Dionnet
  */
 #ifndef ENTITYCONTACTLISTENER_HPP
@@ -7,9 +7,6 @@
 
 #include <Box2D/Box2D.h>
 
-/*!
- * \brief A contact listener for entities.
- */
 class EntityContactListener : public b2ContactListener {
 
 	public:

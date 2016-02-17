@@ -1,5 +1,5 @@
 /*!
- * \brief Contains the WorldEntity class declaration.
+ * \brief Represents a game element that has both a physical and a graphical existence.
  * \author Roch Dionnet
  */
 #ifndef WORLDENTITY_HPP
@@ -9,9 +9,6 @@
 #include "GraphicalEntity.hpp"
 #include "../constants.hpp"
 
-/*!
- * \brief represents a game element that has both a physical and a graphical existence.
- */
 class WorldEntity : public virtual GraphicalEntity, public PhysicalEntity {
 
 	public:

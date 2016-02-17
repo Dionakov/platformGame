@@ -1,5 +1,5 @@
 /*!
- * \brief Contains the TestLevel class declaration.
+ * \brief A level used for testing.
  * \author Roch Dionnet
  */
 #ifndef TESTLEVEL_HPP
@@ -8,9 +8,6 @@
 #include "../AbstractLevel.hpp"
 #include "../../Entity/Entities/Square.hpp"
 
-/*!
- * \brief A level used for testing.
- */
 class TestLevel : public AbstractLevel {
 
 	public:

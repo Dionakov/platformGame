@@ -12,8 +12,7 @@
  * \brief This class is used to represent an element that is both transformable and drawable.
  * With polymorphism, it can be used as an SFML Sprite or an SFML Shape.
  */
-class GraphicalElement : public sf::Drawable, public sf::Transformable {
-};
+class GraphicalElement : public sf::Drawable, public sf::Transformable {};
 
 /*!
  * \brief Represents a game element that can be displayed.
@@ -24,7 +23,7 @@ class GraphicalEntity : public virtual AbstractEntity {
 	/*!
 	 * \brief Default constructor.
 	 */
-	GraphicalEntity(void) : AbstractEntity() {}
+	GraphicalEntity(bool animated = false) : AbstractEntity(), animated(animated) {}
 
 	/*!
 	 * \brief Virtual destructor.
@@ -39,6 +38,7 @@ class GraphicalEntity : public virtual AbstractEntity {
 
 	protected:
 	GraphicalElement* graphicalElement; /*!< A pointer on the graphicalElement that can be displayed */
+	bool animated; /*!< Tells if the graphical element is animated. */
 };
 
 #endif

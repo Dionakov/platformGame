@@ -43,6 +43,15 @@
     <ClInclude Include="src\Entity\EntityContactListener.hpp">
       <Filter>src\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="src\Entity\Animation\Animation.hpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Animation\AnimatedSprite.hpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Animation\Animator.hpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -78,6 +87,15 @@
     <ClCompile Include="src\Entity\EntityContactListener.cpp">
       <Filter>src\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entity\Animation\Animator.cpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Animation\AnimatedSprite.cpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Animation\Animation.cpp">
+      <Filter>src\Entity\Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -94,6 +112,9 @@
     </Filter>
     <Filter Include="src\Level\Levels">
       <UniqueIdentifier>{90d0cff7-639c-41f1-be1b-80113cd9351d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Entity\Animation">
+      <UniqueIdentifier>{ccafbd92-a7e4-4caa-b7d5-1cb849893bd1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

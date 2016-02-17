@@ -1,13 +1,10 @@
 /*!
- * \brief Contains the AbstractEntity class declaration. 
+ * \brief Base class for game entities.
  * \author Roch Dionnet
  */
 #ifndef ABSTRACTENTITY_HPP
 #define ABSTRACTENTITY_HPP
 
-/*!
- * \brief Base class for game entities.
- */
 class AbstractEntity {
 
 	public:

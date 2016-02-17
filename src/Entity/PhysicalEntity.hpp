@@ -1,5 +1,5 @@
 /*!
- * \brief Contains the PhysicalEntity class declaration.
+ * \brief Represents a game element, physics-wise.
  * \author Roch Dionnet
  */
 #ifndef PHYSICALENTITY_HPP
@@ -8,9 +8,6 @@
 #include <Box2D/Box2D.h>
 #include "AbstractEntity.hpp"
 
-/*!
- * \brief Represents a game element, physics-wise.
- */ 
 class PhysicalEntity : public virtual AbstractEntity {
 
 	public:
