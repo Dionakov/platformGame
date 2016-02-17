@@ -2,7 +2,7 @@
 #include "../constants.hpp"
 #include "Animation/AnimatedSprite.hpp"
 
-void WorldEntity::updateGraphics(void) {
+void WorldEntity::matchGraphicsToPhysics(void) {
 	
 	if(animated) {
 

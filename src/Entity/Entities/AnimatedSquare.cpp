@@ -7,7 +7,8 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 													 contactLeft(false), 
 													 contactRight(false), 
 													 contactBottomRight(false),
-													 contactBottomLeft(false) 
+													 contactBottomLeft(false),
+													 currentSubRectIndex(0)
 {
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
@@ -72,6 +73,13 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 	this->body->SetUserData((void*)this);
+
+	// animation test : remplissage de textureSubRects
+	this->textureSubRects = std::vector<sf::IntRect>();
+	textureSubRects.push_back(sf::IntRect(0,0,60,80));
+	textureSubRects.push_back(sf::IntRect(61,0,60,80));
+	textureSubRects.push_back(sf::IntRect(0,81,60,80));
+	textureSubRects.push_back(sf::IntRect(61,81,60,80));
 }
 
 b2BodyDef AnimatedSquare::getBodyDef(void) {
@@ -118,7 +126,14 @@ void AnimatedSquare::tick(void) {
 			body->ApplyForceToCenter(b2Vec2(80.f*body->GetMass(), 0), true);
 	}
 
-	this->updateGraphics();
+	// animation test
+	sf::Sprite* s = reinterpret_cast<sf::Sprite*>(this->graphicalElement);
+	s->setTextureRect(textureSubRects.at(currentSubRectIndex/60));
+	if(currentSubRectIndex>=(textureSubRects.size())*60-1)
+		currentSubRectIndex=0;
+	else currentSubRectIndex++;
+	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
+	this->matchGraphicsToPhysics();
 }
 
 void AnimatedSquare::onBeginContact(b2Contact* contact) {

@@ -24,7 +24,7 @@ class WorldEntity : public virtual GraphicalEntity, public PhysicalEntity {
 	/*!
 	 * \brief Update the graphics to match the physics in terms of transform.
 	 */
-	void updateGraphics(void);
+	void matchGraphicsToPhysics(void);
 };
 
 #endif

@@ -25,7 +25,7 @@ void TrailBullet::tick(void) {
 	
 	// TODO fix this
 	body->SetTransform(b2Vec2(body->GetPosition().x+(directionIsRight ? 1.f : -1.f), body->GetPosition().y), 0);
-	this->updateGraphics(); 
+	this->matchGraphicsToPhysics(); 
 }
 
 b2BodyDef TrailBullet::getBodyDef(void) {

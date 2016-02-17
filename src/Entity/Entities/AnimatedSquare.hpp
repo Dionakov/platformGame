@@ -29,6 +29,8 @@ class AnimatedSquare : public WorldEntity {
 
 	int numFootContacts;
 	sf::Texture squareTexture;
+	std::vector<sf::IntRect> textureSubRects;
+	int currentSubRectIndex;
 };
 
 #endif

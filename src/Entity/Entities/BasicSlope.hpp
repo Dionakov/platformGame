@@ -10,7 +10,7 @@ class BasicSlope : public WorldEntity {
 	static b2BodyDef getBodyDef(void);
 
 	virtual void tick(void)
-	{ this->updateGraphics(); }
+	{ this->matchGraphicsToPhysics(); }
 };
 
 #endif

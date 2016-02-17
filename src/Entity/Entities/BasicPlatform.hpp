@@ -12,7 +12,7 @@ class BasicPlatform : public WorldEntity {
 
 	static b2BodyDef getBodyDef(void);
 
-	virtual void tick(void) { this->updateGraphics(); }
+	virtual void tick(void) { this->matchGraphicsToPhysics(); }
 
 	private:
 		sf::Texture texture;

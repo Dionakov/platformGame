@@ -111,7 +111,7 @@ void Square::tick(void) {
 			body->ApplyForceToCenter(b2Vec2(80.f*body->GetMass(), 0), true);
 	}
 
-	this->updateGraphics();
+	this->matchGraphicsToPhysics();
 }
 
 void Square::onBeginContact(b2Contact* contact) {
