@@ -10,37 +10,21 @@ typedef std::vector<std::vector<sf::IntRect>> AnimationsRects;
 class Animator {
 
 	public:
-	Animator() : currentAnimation(0), currentFrame(0) {}
+	Animator(float speed=1.0f) : currentAnimation(0), currentFrame(0.f), speed(speed) {}
 	void setSubRects(AnimationsRects subRects) { this->subRects = subRects; }
-	void setCurrentAnimation(unsigned int currentAnimation) {
+	void setCurrentAnimation(unsigned int currentAnimation);
 
-		if(currentAnimation < subRects.size()-1) {
-
-			this->currentAnimation = currentAnimation;
-			this->currentFrame = 0;
-		}
-	}
-
-	void setCurrentFrame(unsigned int currentFrame) {
-
-		if(currentFrame < subRects.at(currentAnimation).size()-1)
-			this->currentFrame = currentFrame;
-
-	}
-	void onTick(void) {
-
-		if(currentFrame < subRects.at(currentAnimation).size()-1)
-			currentFrame++;
-		else currentFrame = 0;
-	}
+	void setCurrentFrame(unsigned int currentFrame);
+	void onTick(void);
 
 	sf::IntRect getCurrentTextureRect(void) const {
-		return subRects.at(currentAnimation).at(currentFrame);
+		return subRects.at(currentAnimation).at((int)currentFrame);
 	}
 	protected:
 	AnimationsRects subRects;
 	int currentAnimation;
-	int currentFrame;
+	float currentFrame;
+	float speed; // in frames per tick
 };
 
 #endif

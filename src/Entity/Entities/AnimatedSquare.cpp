@@ -66,10 +66,11 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);*/
 
 	squareTexture = sf::Texture();
-	squareTexture.loadFromFile("img/square.png");
+	squareTexture.loadFromFile("img/spritesheet.png");
 	sf::Sprite* s = new sf::Sprite(squareTexture);
-	s->setOrigin(30.f, 40.f);
 	
+	s->setScale(60.f/23.f,80.f/47.f);
+	s->setOrigin(23.f/2, 47.f/2);
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 	this->body->SetUserData((void*)this);
 
@@ -77,12 +78,12 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	AnimationsRects textureSubRects = AnimationsRects();
 	textureSubRects.push_back(std::vector<sf::IntRect>());
 	std::vector<sf::IntRect>& animation1 = textureSubRects.at(0);
-	animation1.push_back(sf::IntRect(0,0,60,80));
-	animation1.push_back(sf::IntRect(61,0,60,80));
-	animation1.push_back(sf::IntRect(0,81,60,80));
-	animation1.push_back(sf::IntRect(61,81,60,80));
+	animation1.push_back(sf::IntRect(40,139,23,47));
+	animation1.push_back(sf::IntRect(73,140,96-73,187-140));
+	animation1.push_back(sf::IntRect(40,139,63-40,186-139));
+	animation1.push_back(sf::IntRect(137,140,160-137,186-140));
 
-	animator = Animator();
+	animator = Animator(0.1f);
 	animator.setSubRects(textureSubRects);
 }
 

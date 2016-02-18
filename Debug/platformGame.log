@@ -1,13 +1,8 @@
-﻿Build started 18/02/2016 12:17:05.
+﻿Build started 18/02/2016 14:22:29.
      1>Project "F:\Programmation\platformGame\platformGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Entity\Entities\AnimatedSquare.cpp src\Level\Levels\TestLevel.cpp src\main.cpp
-         AnimatedSquare.cpp
-     1>f:\programmation\platformgame\src\entity\entities\../../Animation/Animator.hpp(32): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         main.cpp
-         TestLevel.cpp
+         F:\Logiciels\VS 2012\VC\bin\CL.exe /c /Ilib/SFML/include /Ilib/Box2D /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\Animation\Animator.cpp
+         Animator.cpp
        Link:
          F:\Logiciels\VS 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Programmation\platformGame\Debug\platformGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:lib/SFML/lib /LIBPATH:lib/Box2D/Build/vs2012 "sfml-system-d.lib" "sfml-window-d.lib" "sfml-graphics-d.lib" Box2D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Programmation\platformGame\Debug\platformGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Programmation\platformGame\Debug\platformGame.lib" /MACHINE:X86 Debug\Animator.obj
          Debug\AnimatedSquare.obj
@@ -27,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:01.28
