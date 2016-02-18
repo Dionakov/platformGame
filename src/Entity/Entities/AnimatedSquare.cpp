@@ -1,14 +1,14 @@
 #include "AnimatedSquare.hpp"
 #include <iostream>
 #include "../../constants.hpp"
+#include "../../Animation/Animator.hpp"
 
 AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity(world, body), 
 													 numFootContacts(0), 
 													 contactLeft(false), 
 													 contactRight(false), 
 													 contactBottomRight(false),
-													 contactBottomLeft(false),
-													 currentSubRectIndex(0)
+													 contactBottomLeft(false)
 {
 	b2FixtureDef fixtureDef;
 	fixtureDef.density = 1.f;
@@ -68,18 +68,22 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	squareTexture = sf::Texture();
 	squareTexture.loadFromFile("img/square.png");
 	sf::Sprite* s = new sf::Sprite(squareTexture);
-	s->setTextureRect(sf::IntRect(0, 0, 60, 80));
 	s->setOrigin(30.f, 40.f);
 	
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 	this->body->SetUserData((void*)this);
 
 	// animation test : remplissage de textureSubRects
-	this->textureSubRects = std::vector<sf::IntRect>();
-	textureSubRects.push_back(sf::IntRect(0,0,60,80));
-	textureSubRects.push_back(sf::IntRect(61,0,60,80));
-	textureSubRects.push_back(sf::IntRect(0,81,60,80));
-	textureSubRects.push_back(sf::IntRect(61,81,60,80));
+	AnimationsRects textureSubRects = AnimationsRects();
+	textureSubRects.push_back(std::vector<sf::IntRect>());
+	std::vector<sf::IntRect>& animation1 = textureSubRects.at(0);
+	animation1.push_back(sf::IntRect(0,0,60,80));
+	animation1.push_back(sf::IntRect(61,0,60,80));
+	animation1.push_back(sf::IntRect(0,81,60,80));
+	animation1.push_back(sf::IntRect(61,81,60,80));
+
+	animator = Animator();
+	animator.setSubRects(textureSubRects);
 }
 
 b2BodyDef AnimatedSquare::getBodyDef(void) {
@@ -128,10 +132,10 @@ void AnimatedSquare::tick(void) {
 
 	// animation test
 	sf::Sprite* s = reinterpret_cast<sf::Sprite*>(this->graphicalElement);
-	s->setTextureRect(textureSubRects.at(currentSubRectIndex/60));
-	if(currentSubRectIndex>=(textureSubRects.size())*60-1)
-		currentSubRectIndex=0;
-	else currentSubRectIndex++;
+	
+	animator.onTick();
+	s->setTextureRect(animator.getCurrentTextureRect());
+
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 	this->matchGraphicsToPhysics();
 }

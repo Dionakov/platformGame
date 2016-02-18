@@ -47,7 +47,7 @@
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
     <ClInclude Include="src\Animation\Animator.hpp">
-      <Filter>src\Entity\Animation</Filter>
+      <Filter>src\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +88,7 @@
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
     <ClCompile Include="src\Animation\Animator.cpp">
-      <Filter>src\Entity\Animation</Filter>
+      <Filter>src\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,7 +107,7 @@
     <Filter Include="src\Level\Levels">
       <UniqueIdentifier>{90d0cff7-639c-41f1-be1b-80113cd9351d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Entity\Animation">
+    <Filter Include="src\Animation">
       <UniqueIdentifier>{ccafbd92-a7e4-4caa-b7d5-1cb849893bd1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

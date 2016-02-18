@@ -4,6 +4,7 @@
 #define ANIMATEDSQUARE_HPP
 
 #include "../WorldEntity.hpp"
+#include "../../Animation/Animator.hpp"
 
 class AnimatedSquare : public WorldEntity {
 
@@ -29,8 +30,7 @@ class AnimatedSquare : public WorldEntity {
 
 	int numFootContacts;
 	sf::Texture squareTexture;
-	std::vector<sf::IntRect> textureSubRects;
-	int currentSubRectIndex;
+	Animator animator;
 };
 
 #endif
