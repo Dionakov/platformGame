@@ -29,7 +29,6 @@ class AnimatedSquare : public WorldEntity {
 	bool contactBottomLeft;
 
 	int numFootContacts;
-	sf::Texture squareTexture;
 	Animator animator;
 };
 

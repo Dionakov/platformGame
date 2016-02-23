@@ -10,12 +10,15 @@ typedef std::vector<std::vector<sf::IntRect>> AnimationsRects;
 class Animator {
 
 	public:
-	Animator(float speed=1.0f) : currentAnimation(0), currentFrame(0.f), speed(speed) {}
+	Animator(float speed=1.0f) : currentAnimation(0), currentFrame(0.f), speed(speed), paused(false) {}
 	void setSubRects(AnimationsRects subRects) { this->subRects = subRects; }
 	void setCurrentAnimation(unsigned int currentAnimation);
 
 	void setCurrentFrame(unsigned int currentFrame);
 	void onTick(void);
+
+	void setPaused(bool paused) { this->paused = paused; }
+	bool getPaused(void) const { return this->paused; } 
 
 	sf::IntRect getCurrentTextureRect(void) const {
 		return subRects.at(currentAnimation).at((int)currentFrame);
@@ -25,6 +28,7 @@ class Animator {
 	int currentAnimation;
 	float currentFrame;
 	float speed; // in frames per tick
+	bool paused;
 };
 
 #endif

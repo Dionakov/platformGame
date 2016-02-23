@@ -49,6 +49,9 @@
     <ClInclude Include="src\Animation\Animator.hpp">
       <Filter>src\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="src\TextureManager.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity\Entities\BoxBoundary.cpp">
@@ -89,6 +92,9 @@
     </ClCompile>
     <ClCompile Include="src\Animation\Animator.cpp">
       <Filter>src\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureManager.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

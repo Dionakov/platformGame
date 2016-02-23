@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include "TestLevel.hpp"
+#include "../../TextureManager.hpp"
 #include "../../Entity/Entities/BasicPlatform.hpp"
 #include "../../Entity/Entities/BasicSlope.hpp"
 #include "../../Entity/Entities/Square.hpp"
@@ -24,6 +25,14 @@ void TestLevel::initialize(void) {
 	physicalEntities.clear();
 	graphicalEntities.clear();
 
+	// bg
+	sf::Texture& bgTexture = TextureManager::getTexture("img/testBackground.jpg");
+	bgSprite = sf::Sprite(bgTexture);
+	bgSprite.setOrigin(1500.f, 750.f);
+	bgSprite.setPosition(1500.f, 1500.f/2);
+	bgSprite.setScale(4.f, 4.f);
+
+	// player
 	player = new AnimatedSquare(&world, world.CreateBody(&AnimatedSquare::getBodyDef()));
 	physicalEntities.push_back(player);
 	graphicalEntities.push_back(player);
@@ -103,6 +112,7 @@ void TestLevel::pollEvent(sf::Event e) {
 
 void TestLevel::render(void) {
 
+	window.draw(bgSprite);
 	AbstractLevel::render();
 	
 	window.draw(playerInfoText);

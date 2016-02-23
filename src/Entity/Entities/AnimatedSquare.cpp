@@ -1,5 +1,6 @@
 #include "AnimatedSquare.hpp"
 #include <iostream>
+#include "../../TextureManager.hpp"
 #include "../../constants.hpp"
 #include "../../Animation/Animator.hpp"
 
@@ -15,7 +16,7 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	fixtureDef.friction = 0.3f;
 		
 	b2PolygonShape polygonShape;
-	polygonShape.SetAsBox(29.f/PPM, 40.f/PPM);
+	polygonShape.SetAsBox(19.f/PPM, 40.f/PPM);
 		
 	fixtureDef.shape = &polygonShape;
 	body->CreateFixture(&fixtureDef);
@@ -31,7 +32,7 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	fixtureDef.friction = 0.f;
 	fixtureDef.isSensor = true;
 
-	polygonShape.SetAsBox(28.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
+	polygonShape.SetAsBox(18.f/PPM, 2.f/PPM, b2Vec2(0.f, 39.f/PPM), 0);
 
 	fixtureDef.shape = &polygonShape;
 
@@ -39,23 +40,23 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 
 	fixtureDef.isSensor = false;
 	fixtureDef.friction = 300.f;
-	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(-28.f/PPM, 0.f), 0);
+	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(-18.f/PPM, 0.f), 0);
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"LeftAnimatedSquareSide");
 
-	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(28.f/PPM,0.f), 0);
+	polygonShape.SetAsBox(1.f/PPM, 38.f/PPM, b2Vec2(18.f/PPM,0.f), 0);
 	fixtureDef.shape = &polygonShape;
 
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"RightAnimatedSquareSide");
 
 	body->SetTransform(b2Vec2(100.f/PPM, 100.f/PPM), 0);
 
-	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(28.f/PPM,35.f/PPM), 0);
+	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(18.f/PPM,35.f/PPM), 0);
 	fixtureDef.shape = &polygonShape;
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"BottomRightAnimatedSquareCorner");
 
-	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(-28.f/PPM,35.f/PPM),0);
+	polygonShape.SetAsBox(1.f/PPM,4.5f/PPM,b2Vec2(-18.f/PPM,35.f/PPM),0);
 	fixtureDef.shape = &polygonShape;
 	body->CreateFixture(&fixtureDef)->SetUserData((void*)"BottomLeftAnimatedSquareCorner");
 
@@ -65,11 +66,10 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);*/
 
-	squareTexture = sf::Texture();
-	squareTexture.loadFromFile("img/spritesheet.png");
+	sf::Texture& squareTexture = TextureManager::getTexture("img/spritesheet.png");
 	sf::Sprite* s = new sf::Sprite(squareTexture);
 	
-	s->setScale(60.f/23.f,80.f/47.f);
+	s->setScale(40.f/23.f,80.f/47.f);
 	s->setOrigin(23.f/2, 47.f/2);
 	this->graphicalElement = reinterpret_cast<GraphicalElement*>(s);
 	this->body->SetUserData((void*)this);
@@ -78,12 +78,12 @@ AnimatedSquare::AnimatedSquare(b2World const* world, b2Body* body) : WorldEntity
 	AnimationsRects textureSubRects = AnimationsRects();
 	textureSubRects.push_back(std::vector<sf::IntRect>());
 	std::vector<sf::IntRect>& animation1 = textureSubRects.at(0);
-	animation1.push_back(sf::IntRect(40,139,23,47));
 	animation1.push_back(sf::IntRect(73,140,96-73,187-140));
 	animation1.push_back(sf::IntRect(40,139,63-40,186-139));
 	animation1.push_back(sf::IntRect(137,140,160-137,186-140));
+	animation1.push_back(sf::IntRect(40,139,23,47));
 
-	animator = Animator(0.1f);
+	animator = Animator(0.15f);
 	animator.setSubRects(textureSubRects);
 }
 
@@ -97,28 +97,60 @@ b2BodyDef AnimatedSquare::getBodyDef(void) {
 
 void AnimatedSquare::tick(void) {
 
-	// keyboard movement
+	// animations
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
+		!sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+
+		sf::Vector2f oldScale = this->graphicalElement->getScale();
+		this->graphicalElement->setScale(oldScale.x>0.f ? -oldScale.x : oldScale.x, oldScale.y);
+	} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
+		!sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+		
+		sf::Vector2f oldScale = this->graphicalElement->getScale();
+		this->graphicalElement->setScale(oldScale.x<0.f ? -oldScale.x : oldScale.x, oldScale.y);
+	}
+
+	// physics
 	if(numFootContacts > 0) { // on ground
 
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
 			!sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
-			!contactLeft)
+			!contactLeft) {
+
+			if(animator.getPaused()==true)
+				animator.setCurrentFrame(0);
+			animator.setPaused(false);
+			sf::Vector2f oldScale = this->graphicalElement->getScale();
+			this->graphicalElement->setScale(oldScale.x>0.f ? -oldScale.x : oldScale.x, oldScale.y);
 			body->SetLinearVelocity(b2Vec2(-600.f/PPM, body->GetLinearVelocity().y));
+		}
 			
 		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&
 				!sf::Keyboard::isKeyPressed(sf::Keyboard::Q) &&
-				!contactRight)
+				!contactRight) {
+
+			if(animator.getPaused()==true)
+				animator.setCurrentFrame(0);
+			animator.setPaused(false);
 			body->SetLinearVelocity(b2Vec2(600.f/PPM, body->GetLinearVelocity().y));
-		else {
+		} else {
 			body->SetLinearVelocity(b2Vec2(0.f, body->GetLinearVelocity().y));
+			animator.setCurrentFrame(1);
+			animator.setPaused(true);
 		}
-		if((sf::Keyboard::isKeyPressed(sf::Keyboard::D) && contactBottomRight) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && contactBottomLeft))
+		if((sf::Keyboard::isKeyPressed(sf::Keyboard::D) && contactBottomRight) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && contactBottomLeft)) {
+			
 			body->ApplyLinearImpulse(b2Vec2(0.f,-10.f*body->GetMass()),body->GetWorldCenter(),true);
+		}
 		else
 			body->ApplyForceToCenter(b2Vec2(0.f,100.f*body->GetMass()),true);
 	}
 
 	else { // jumping or falling
+
+		animator.setCurrentFrame(1);
+		animator.setPaused(true);
 
 		if(contactLeft || contactRight)
 			body->ApplyForceToCenter(b2Vec2((contactLeft ? -2.f : 2.f)*body->GetMass(),-60.f*body->GetMass()), true);

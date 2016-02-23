@@ -27,6 +27,7 @@
     <ClInclude Include="src\Level\AbstractLevel.hpp" />
     <ClInclude Include="src\Level\Levels\TestLevel.hpp" />
     <ClInclude Include="src\sfmlToBox2D.hpp" />
+    <ClInclude Include="src\TextureManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Animation\Animator.cpp" />
@@ -42,6 +43,7 @@
     <ClCompile Include="src\Level\Levels\TestLevel.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\sfmlToBox2D.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="platformGame.sln" />

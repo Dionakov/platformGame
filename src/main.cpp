@@ -86,10 +86,13 @@ int main() {
 			levels.at(currentLevel)->initialize();
 		}*/
 
-		// looping on first level. Change that when done playing
-		if(levels.at(currentLevel)->isFinished())
+		// looping on first level. Change that when done testing
+		if(levels.at(currentLevel)->isFinished()) {
+			sf::Clock levelLoadTimer = sf::Clock();
 			levels.at(currentLevel)->initialize();
-			
+			float elapsed = levelLoadTimer.restart().asSeconds();
+			std::cout << "Level loaded in " << elapsed << " seconds." << std::endl;
+		}	
 	}
 
 	return EXIT_SUCCESS;

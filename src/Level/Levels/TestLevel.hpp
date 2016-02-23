@@ -19,6 +19,7 @@ class TestLevel : public AbstractLevel {
 	virtual void pollEvent(sf::Event e);
 
 	protected:
+	sf::Sprite bgSprite; // TODO do this using the engine. Seriously. This sucks.
 	AnimatedSquare* player; /*!< The rectangle-shaped player. */ 
 	sf::Text fpsText; /*!< A text which shows the number of FPS. */
 	sf::Text playerInfoText; /*!< A text which shows some info on the player. */

@@ -17,7 +17,10 @@ void Animator::setCurrentFrame(unsigned int currentFrame) {
 
 void Animator::onTick(void) {
 
-	if(currentFrame < subRects.at(currentAnimation).size()-speed)
-		currentFrame+=speed;
-	else currentFrame = 0;
+	if(!paused) {
+
+		if(currentFrame < subRects.at(currentAnimation).size()-speed)
+			currentFrame+=speed;
+		else currentFrame = 0;
+	}
 }
