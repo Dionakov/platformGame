@@ -47,8 +47,8 @@ int main() {
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "platformGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 
-	window.setVerticalSyncEnabled(true);
-
+	window.setVerticalSyncEnabled(false);
+	window.setFramerateLimit(65);
 	sf::View playerView(sf::Vector2f(400.f, 300.f), sf::Vector2f(1600.f, 1200.f));
 
 	b2World world(b2Vec2(0.f, 98.2f));

@@ -46,11 +46,11 @@
     <ClInclude Include="src\Entity\Entities\AnimatedSquare.hpp">
       <Filter>src\Entity\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\Animation\Animator.hpp">
-      <Filter>src\Animation</Filter>
-    </ClInclude>
     <ClInclude Include="src\TextureManager.hpp">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation\Animator.hpp">
+      <Filter>src\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -90,11 +90,11 @@
     <ClCompile Include="src\Entity\Entities\AnimatedSquare.cpp">
       <Filter>src\Entity\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\Animation\Animator.cpp">
-      <Filter>src\Animation</Filter>
-    </ClCompile>
     <ClCompile Include="src\TextureManager.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation\Animator.cpp">
+      <Filter>src\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -15,6 +15,7 @@ void Animator::setCurrentFrame(unsigned int currentFrame) {
 		this->currentFrame = (float)currentFrame;
 }
 
+
 void Animator::onTick(void) {
 
 	if(!paused) {
